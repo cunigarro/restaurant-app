@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RestaurantAppCUD/1.0.0": {
+        "runtime": {
+          "RestaurantAppCUD.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RestaurantAppCUD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
