@@ -21,5 +21,18 @@ namespace RestaurantAppCUD
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AppLogicDBCUD.Conexion objConexion;
+            objConexion = new AppLogicDBCUD.Conexion();
+
+            System.Data.OleDb.OleDbCommand miComando = new System.Data.OleDb.OleDbCommand();
+            miComando.Connection=objConexion.
+            miComando.CommandText = @"SELECT * FROM Clientes";
+            miComando.ExecuteNonQuery();
+
+
+        }
     }
 }

@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "I+QqfgidFB7utL90pg/mBHx2/fy2utsyS4lYFdgmzDAV3yNIC9OxUcx3CskCtxjyHW/lHfeBLpF9fL/3oqoNMw==",
+  "dgSpecHash": "rzWyz9BOu59wehJoTu0P8jOtqrvuFwpmDL73Modfq6ixIs1er96ApRg+MMKwTlZXUgC1TJG88BL00x9VxxlnxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\chris\\Git\\restaurant-app\\RestaurantAppCUD\\AppLogicDBCUD\\AppLogicDBCUD.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.data.oledb\\6.0.0\\system.data.oledb.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.diagnostics.performancecounter\\6.0.0\\system.diagnostics.performancecounter.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\chris\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
