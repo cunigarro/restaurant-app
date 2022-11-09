@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace RestaurantAppCUD
 {
     public partial class Form1 : Form
@@ -24,15 +26,21 @@ namespace RestaurantAppCUD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AppLogicDBCUD.Conexion objConexion;
-            objConexion = new AppLogicDBCUD.Conexion();
+            AppLogicDBCUD.Connection objConexion;
+            objConexion = new AppLogicDBCUD.Connection();
+            string queryString1;
+            string queryString2;
+            AppLogicDBCUD.Client objClient;
+            objClient = new AppLogicDBCUD.Client();
 
-            System.Data.OleDb.OleDbCommand miComando = new System.Data.OleDb.OleDbCommand();
-            miComando.Connection=objConexion.
-            miComando.CommandText = @"SELECT * FROM Clientes";
-            miComando.ExecuteNonQuery();
+            queryString1 = objClient.requestAllRecipes();
+            objConexion.setSentence(queryString1);
 
+            DataSet myDataSet;
+            myDataSet = new DataSet();
+            myDataSet = objConexion.Request();
 
+            dataGridView1.DataSource = myDataSet.Tables[0];
         }
     }
 }
