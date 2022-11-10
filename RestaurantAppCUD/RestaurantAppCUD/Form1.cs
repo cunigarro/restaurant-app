@@ -26,21 +26,54 @@ namespace RestaurantAppCUD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AppLogicDBCUD.Connection objConexion;
-            objConexion = new AppLogicDBCUD.Connection();
-            string queryString1;
-            string queryString2;
-            AppLogicDBCUD.Client objClient;
-            objClient = new AppLogicDBCUD.Client();
+            AppLogicDBCUD.Connection objConnection;
+            objConnection = new AppLogicDBCUD.Connection();
 
-            queryString1 = objClient.requestAllRecipes();
-            objConexion.setSentence(queryString1);
+            string queryString;
+            AppLogicDBCUD.Recipe objRecipe;
+            objRecipe = new AppLogicDBCUD.Recipe();
+
+            queryString = objRecipe.requestAllRecipes();
+            objConnection.setSentence(queryString);
 
             DataSet myDataSet;
             myDataSet = new DataSet();
-            myDataSet = objConexion.Request();
+            myDataSet = objConnection.Request();
 
             dataGridView1.DataSource = myDataSet.Tables[0];
+
+            label5.Text = "Se muestran todas las recetas";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AppLogicDBCUD.Connection objConnection;
+                objConnection = new AppLogicDBCUD.Connection();
+
+                string queryString;
+                AppLogicDBCUD.Recipe objRecipe;
+                objRecipe = new AppLogicDBCUD.Recipe();
+
+                objRecipe.setIdRecipe(Int16.Parse(textBox3.Text));
+                objRecipe.setIdIngredient(Int16.Parse(textBox1.Text));
+                objRecipe.setIdMeasure(Int16.Parse(textBox2.Text));
+                objRecipe.setDescription(richTextBox1.Text);
+                objRecipe.addRecipe();
+
+                queryString = objRecipe.readCommandString();
+                objConnection.setSentence(queryString);
+                objConnection.runSentence();
+
+                label5.Text = "Se agrega receta";
+            } 
+            catch (Exception ex)
+            {
+                label5.Text = "Error: " + ex.Message;
+            }
+
+            
         }
     }
 }
