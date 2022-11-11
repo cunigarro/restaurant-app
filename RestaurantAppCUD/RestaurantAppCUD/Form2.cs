@@ -21,5 +21,10 @@ namespace RestaurantAppCUD
         {
 
         }
+
+        private void stepWizardControl1_SelectedPageChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

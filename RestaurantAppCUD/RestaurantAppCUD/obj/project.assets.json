@@ -2,6 +2,48 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "AeroWizard/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/AeroWizard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/AeroWizard.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ],
+        "resource": {
+          "lib/net6.0-windows7.0/de/AeroWizard.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es/AeroWizard.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/AeroWizard.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/it/AeroWizard.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0-windows7.0/pl/AeroWizard.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0-windows7.0/ru/AeroWizard.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/zh-CN/AeroWizard.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-Hant/AeroWizard.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -226,6 +268,78 @@
     }
   },
   "libraries": {
+    "AeroWizard/2.3.1": {
+      "sha512": "z0UBaPIvYdJPzEzk08tmUBWIfgnB2ehQXolqH7OmGl5UR3qCe06uGPuIo666Pamomzmqmh32CZSBbkpNE3DvUQ==",
+      "type": "package",
+      "path": "aerowizard/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "WizardControlIcon48.png",
+        "aerowizard.2.3.1.nupkg.sha512",
+        "aerowizard.nuspec",
+        "lib/net20/AeroWizard.dll",
+        "lib/net20/AeroWizard.xml",
+        "lib/net20/de/AeroWizard.resources.dll",
+        "lib/net20/es/AeroWizard.resources.dll",
+        "lib/net20/fr/AeroWizard.resources.dll",
+        "lib/net20/it/AeroWizard.resources.dll",
+        "lib/net20/pl/AeroWizard.resources.dll",
+        "lib/net20/ru/AeroWizard.resources.dll",
+        "lib/net20/zh-CN/AeroWizard.resources.dll",
+        "lib/net20/zh-Hant/AeroWizard.resources.dll",
+        "lib/net35/AeroWizard.dll",
+        "lib/net35/AeroWizard.xml",
+        "lib/net35/de/AeroWizard.resources.dll",
+        "lib/net35/es/AeroWizard.resources.dll",
+        "lib/net35/fr/AeroWizard.resources.dll",
+        "lib/net35/it/AeroWizard.resources.dll",
+        "lib/net35/pl/AeroWizard.resources.dll",
+        "lib/net35/ru/AeroWizard.resources.dll",
+        "lib/net35/zh-CN/AeroWizard.resources.dll",
+        "lib/net35/zh-Hant/AeroWizard.resources.dll",
+        "lib/net40/AeroWizard.dll",
+        "lib/net40/AeroWizard.xml",
+        "lib/net40/de/AeroWizard.resources.dll",
+        "lib/net40/es/AeroWizard.resources.dll",
+        "lib/net40/fr/AeroWizard.resources.dll",
+        "lib/net40/it/AeroWizard.resources.dll",
+        "lib/net40/pl/AeroWizard.resources.dll",
+        "lib/net40/ru/AeroWizard.resources.dll",
+        "lib/net40/zh-CN/AeroWizard.resources.dll",
+        "lib/net40/zh-Hant/AeroWizard.resources.dll",
+        "lib/net45/AeroWizard.dll",
+        "lib/net45/AeroWizard.xml",
+        "lib/net45/de/AeroWizard.resources.dll",
+        "lib/net45/es/AeroWizard.resources.dll",
+        "lib/net45/fr/AeroWizard.resources.dll",
+        "lib/net45/it/AeroWizard.resources.dll",
+        "lib/net45/pl/AeroWizard.resources.dll",
+        "lib/net45/ru/AeroWizard.resources.dll",
+        "lib/net45/zh-CN/AeroWizard.resources.dll",
+        "lib/net45/zh-Hant/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/AeroWizard.dll",
+        "lib/net5.0-windows7.0/AeroWizard.xml",
+        "lib/net5.0-windows7.0/de/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/es/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/fr/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/it/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/pl/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/ru/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/zh-Hant/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/AeroWizard.dll",
+        "lib/net6.0-windows7.0/AeroWizard.xml",
+        "lib/net6.0-windows7.0/de/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/es/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/fr/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/it/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/pl/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/ru/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/zh-Hant/AeroWizard.resources.dll"
+      ]
+    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "type": "package",
@@ -501,6 +615,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "AeroWizard >= 2.3.1",
       "AppLogicDBCUD >= 1.0.0",
       "System.Data.OleDb >= 6.0.0"
     ]
@@ -548,6 +663,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "AeroWizard": {
+            "target": "Package",
+            "version": "[2.3.1, )"
+          },
           "System.Data.OleDb": {
             "target": "Package",
             "version": "[6.0.0, )"

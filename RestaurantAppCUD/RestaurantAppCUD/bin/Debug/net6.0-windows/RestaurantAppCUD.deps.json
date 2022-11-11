@@ -8,11 +8,46 @@
     ".NETCoreApp,Version=v6.0": {
       "RestaurantAppCUD/1.0.0": {
         "dependencies": {
+          "AeroWizard": "2.3.1",
           "AppLogicDBCUD": "1.0.0",
           "System.Data.OleDb": "6.0.0"
         },
         "runtime": {
           "RestaurantAppCUD.dll": {}
+        }
+      },
+      "AeroWizard/2.3.1": {
+        "runtime": {
+          "lib/net6.0-windows7.0/AeroWizard.dll": {
+            "assemblyVersion": "2.3.1.0",
+            "fileVersion": "2.3.1.0"
+          }
+        },
+        "resources": {
+          "lib/net6.0-windows7.0/de/AeroWizard.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es/AeroWizard.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/AeroWizard.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/it/AeroWizard.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0-windows7.0/pl/AeroWizard.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0-windows7.0/ru/AeroWizard.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/zh-CN/AeroWizard.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-Hant/AeroWizard.resources.dll": {
+            "locale": "zh-Hant"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {},
@@ -80,6 +115,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AeroWizard/2.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z0UBaPIvYdJPzEzk08tmUBWIfgnB2ehQXolqH7OmGl5UR3qCe06uGPuIo666Pamomzmqmh32CZSBbkpNE3DvUQ==",
+      "path": "aerowizard/2.3.1",
+      "hashPath": "aerowizard.2.3.1.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",

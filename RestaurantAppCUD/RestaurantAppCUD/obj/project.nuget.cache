@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/M9ZEgDCd1oVY4a1PsPy0tQnQPEeNqdJ8DT7Z2bB0zdcadDicgM/e5FvaJaT+s1ZHlbwBVn1EHi5SrO6aSA+sA==",
+  "dgSpecHash": "hzjSzX0ND/9RSg25cFckNQ9/4qIU0f0m7Dwz7Kpza8p7/4gQI8cV+NzdRGPofzNqaGfYzMETNF4XPPLikSdPKA==",
   "success": true,
   "projectFilePath": "C:\\Users\\chris\\Git\\restaurant-app\\RestaurantAppCUD\\RestaurantAppCUD\\RestaurantAppCUD.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\aerowizard\\2.3.1\\aerowizard.2.3.1.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.data.oledb\\6.0.0\\system.data.oledb.6.0.0.nupkg.sha512",
