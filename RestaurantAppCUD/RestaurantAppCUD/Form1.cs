@@ -30,6 +30,7 @@ namespace RestaurantAppCUD
             objConnection = new AppLogicDBCUD.Connection();
 
             string queryString;
+
             AppLogicDBCUD.Recipe objRecipe;
             objRecipe = new AppLogicDBCUD.Recipe();
 
@@ -53,10 +54,10 @@ namespace RestaurantAppCUD
                 objConnection = new AppLogicDBCUD.Connection();
 
                 string queryString;
+
                 AppLogicDBCUD.Recipe objRecipe;
                 objRecipe = new AppLogicDBCUD.Recipe();
 
-                objRecipe.setIdRecipe(Int16.Parse(textBox3.Text));
                 objRecipe.setIdIngredient(Int16.Parse(textBox1.Text));
                 objRecipe.setIdMeasure(Int16.Parse(textBox2.Text));
                 objRecipe.setDescription(richTextBox1.Text);

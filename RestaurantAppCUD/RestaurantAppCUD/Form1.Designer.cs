@@ -43,8 +43,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,7 +155,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 41;
-            this.dataGridView1.Size = new System.Drawing.Size(677, 141);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 141);
             this.dataGridView1.TabIndex = 15;
             // 
             // textBox1
@@ -184,29 +182,11 @@
             this.label5.Size = new System.Drawing.Size(0, 15);
             this.label5.TabIndex = 18;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(12, 34);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 23);
-            this.textBox3.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Id Receta";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 652);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);

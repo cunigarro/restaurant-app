@@ -20,3 +20,4 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.csproj.CopyComplete
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\AppLogicDBCUD.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\AppLogicDBCUD.pdb
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.Form2.resources

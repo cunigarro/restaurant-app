@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.OleDb;
-using System.Transactions;
 
 namespace AppLogicDBCUD
 {
@@ -16,7 +15,7 @@ namespace AppLogicDBCUD
         public Connection()
         {
             dbConnection = new OleDbConnection();
-            dbConnection.ConnectionString = @"Provider=SQLNCLI11; Data Source=DESKTOP-3M6BAF9; Initial Catalog=Restaurant; Persist Securty Info=False; User ID=sa; Password=123456;";
+            dbConnection.ConnectionString = @"Provider=SQLNCLI11; Data Source=DESKTOP-3M6BAF9; Initial Catalog=Restaurant; Persist Security Info=False; User ID=sa; Password=123456;";
         }
 
         public void setSentence(string queryS)

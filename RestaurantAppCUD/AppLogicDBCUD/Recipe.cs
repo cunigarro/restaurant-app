@@ -8,7 +8,6 @@ namespace AppLogicDBCUD
 {
     public class Recipe
     {
-        private int idRecipe;
         private int idIngredient;
         private int idMeasure;
         private string description;
@@ -18,11 +17,6 @@ namespace AppLogicDBCUD
         public string requestAllRecipes()
         {
             return @"SELECT * FROM Recipe";
-        }
-
-        public void setIdRecipe(int value)
-        {
-            this.idRecipe = value;
         }
 
         public void setIdIngredient(int value)
@@ -43,7 +37,7 @@ namespace AppLogicDBCUD
         public void addRecipe()
         {
             string queryString;
-            queryString = @"INSERT INTO Recipe(ID_Recipe, ID_Ingredient, ID_Measure, Description) VALUES(" + this.idRecipe + ", " + this.idIngredient + ", " + this.idMeasure + ", '" + this.description + "')";
+            queryString = @"INSERT INTO Recipe(ID_Ingredient, ID_Measure, Description) VALUES(" + this.idIngredient + ", " + this.idMeasure + ", '" + this.description + "')";
             commandString = queryString;
         }
 
