@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RestaurantAppCUD
 {
-    public partial class Form2 : Form
+    public partial class menuForm : Form
     {
-        public Form2()
+        public menuForm()
         {
             InitializeComponent();
         }

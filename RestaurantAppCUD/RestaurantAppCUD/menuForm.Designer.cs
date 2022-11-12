@@ -1,6 +1,6 @@
 ﻿namespace RestaurantAppCUD
 {
-    partial class Form2
+    partial class menuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form2
+            // menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form2";
+            this.Name = "menuForm";
             this.Text = "Menú";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

@@ -4,7 +4,6 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\RestaurantAppCUD.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\RestaurantAppCUD.pdb
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.csproj.AssemblyReference.cache
-C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.Form1.resources
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.csproj.GenerateResource.cache
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.AssemblyInfoInputs.cache
@@ -20,7 +19,6 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.csproj.CopyComplete
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\AppLogicDBCUD.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\AppLogicDBCUD.pdb
-C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.Form2.resources
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\AeroWizard.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\de\AeroWizard.resources.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\es\AeroWizard.resources.dll
@@ -30,3 +28,5 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\ru\AeroWizard.resources.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\zh-CN\AeroWizard.resources.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\zh-Hant\AeroWizard.resources.dll
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.clientForm.resources
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.menuForm.resources

@@ -3,9 +3,11 @@ using System.Windows.Forms;
 
 namespace RestaurantAppCUD
 {
-    public partial class Form1 : Form
+    public partial class clientForm: Form
     {
-        public Form1()
+        menuForm menuFormInstance = new menuForm();
+
+        public clientForm()
         {
             InitializeComponent();
         }
@@ -101,6 +103,9 @@ namespace RestaurantAppCUD
                 objConnection.runSentence();
 
                 notification.Text = "Cliente agregado de manera exitosa.";
+
+                this.Hide();
+                menuFormInstance.Show();
             }
             catch (Exception ex)
             {
