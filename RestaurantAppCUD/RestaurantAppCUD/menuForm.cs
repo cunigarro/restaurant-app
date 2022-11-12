@@ -15,6 +15,27 @@ namespace RestaurantAppCUD
         public menuForm()
         {
             InitializeComponent();
+            setMenuInformation();
+        }
+
+        public void setMenuInformation()
+        {
+            AppLogicDBCUD.Connection objConnection;
+            objConnection = new AppLogicDBCUD.Connection();
+
+            string queryString;
+
+            AppLogicDBCUD.Menu objMenu;
+            objMenu = new AppLogicDBCUD.Menu();
+
+            queryString = objMenu.requestAMenu(1);
+            objConnection.setSentence(queryString);
+
+            DataSet myDataSet;
+            myDataSet = new DataSet();
+            myDataSet = objConnection.Request();
+
+            dataGridView1.DataSource = myDataSet.Tables[0];
         }
 
         private void Form2_Load(object sender, EventArgs e)
