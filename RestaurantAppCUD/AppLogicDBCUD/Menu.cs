@@ -15,7 +15,7 @@ namespace AppLogicDBCUD
 
         public string requestAMenu(int id)
         {
-            return @"SELECT * FROM Menu";
+            return @"SELECT * FROM Menu WHERE ID_Menu=" + id;
         }
 
         public string readCommandString()
