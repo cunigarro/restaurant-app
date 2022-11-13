@@ -35,7 +35,21 @@ namespace RestaurantAppCUD
             myDataSet = new DataSet();
             myDataSet = objConnection.Request();
 
-            dataGridView1.DataSource = myDataSet.Tables[0];
+            DataTable firstTable = myDataSet.Tables[0];
+
+            checkedListBox1.DataSource = firstTable;
+            checkedListBox1.DisplayMember = "Name";
+            checkedListBox1.ValueMember = "ID_Menu";
+
+            foreach (DataRow row in firstTable.Rows)
+            {
+                foreach (DataColumn col in firstTable.Columns)
+                {
+                    object value = row[col];
+                    label1.Text = row["Name"].ToString();
+                    label2.Text = row["Description"].ToString();
+                }
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -44,6 +58,11 @@ namespace RestaurantAppCUD
         }
 
         private void stepWizardControl1_SelectedPageChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
