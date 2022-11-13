@@ -24,10 +24,8 @@ namespace RestaurantAppCUD
             objConnection = new AppLogicDBCUD.Connection();
 
             string queryString;
-
             AppLogicDBCUD.Menu objMenu;
             objMenu = new AppLogicDBCUD.Menu();
-
             queryString = objMenu.requestAMenu(1);
             objConnection.setSentence(queryString);
 
@@ -36,10 +34,6 @@ namespace RestaurantAppCUD
             myDataSet = objConnection.Request();
 
             DataTable firstTable = myDataSet.Tables[0];
-
-            checkedListBox1.DataSource = firstTable;
-            checkedListBox1.DisplayMember = "Name";
-            checkedListBox1.ValueMember = "ID_Menu";
 
             foreach (DataRow row in firstTable.Rows)
             {
@@ -50,6 +44,22 @@ namespace RestaurantAppCUD
                     label2.Text = row["Description"].ToString();
                 }
             }
+
+            string queryStringDishes;
+            AppLogicDBCUD.Dish objDish;
+            objDish = new AppLogicDBCUD.Dish();
+            queryStringDishes = objDish.requestAlDishes();
+            objConnection.setSentence(queryStringDishes);
+
+            DataSet myDataSetDishes;
+            myDataSetDishes = new DataSet();
+            myDataSetDishes = objConnection.Request();
+
+            DataTable firstTableDishes = myDataSetDishes.Tables[0];
+
+            checkedListBox1.DataSource = firstTableDishes;
+            checkedListBox1.DisplayMember = "Name";
+            checkedListBox1.ValueMember = "ID_Dish";
         }
 
         private void Form2_Load(object sender, EventArgs e)
