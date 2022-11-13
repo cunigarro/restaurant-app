@@ -59,7 +59,7 @@ namespace RestaurantAppCUD
 
             checkedListBox1.DataSource = firstTableDishes;
             checkedListBox1.DisplayMember = "Name";
-            checkedListBox1.ValueMember = "ID_Dish";
+            checkedListBox1.ValueMember = "Price";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -74,7 +74,19 @@ namespace RestaurantAppCUD
 
         private void label1_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int total = 0;
+            foreach (object itemChecked in checkedListBox1.CheckedItems)
+            {
+                var row = (itemChecked as DataRowView).Row;
+                total += Int32.Parse(row.ItemArray[3].ToString());
+            }
+
+            label3.Text = total.ToString();
         }
     }
 }
