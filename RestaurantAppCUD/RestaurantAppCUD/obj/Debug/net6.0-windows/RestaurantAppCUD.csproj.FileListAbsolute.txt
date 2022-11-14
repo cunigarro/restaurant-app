@@ -31,3 +31,6 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.clientForm.resources
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.menuForm.resources
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.invoiceForm.resources
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\Syncfusion.Compression.Portable.dll
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\Syncfusion.Pdf.Portable.dll
