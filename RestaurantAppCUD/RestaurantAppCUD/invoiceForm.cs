@@ -65,7 +65,7 @@ namespace RestaurantAppCUD
             dataTable.Rows.Add(new object[] { "E05", "Gary" });
             pdfGrid.DataSource = dataTable;
             pdfGrid.Draw(page, new PointF(10, 10));
-            var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
+            var fileStream = File.Create("C:\\Users\\chris\\Documents\\.pdf");
             doc.Save(fileStream);
             doc.Close(true);
         }
