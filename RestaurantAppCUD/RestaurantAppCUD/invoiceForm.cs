@@ -52,33 +52,21 @@ namespace RestaurantAppCUD
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            //Create a new PDF document.
             PdfDocument doc = new PdfDocument();
-            //Add a page.
             PdfPage page = doc.Pages.Add();
-            //Create a PdfGrid.
             PdfGrid pdfGrid = new PdfGrid();
-            //Create a DataTable.
             DataTable dataTable = new DataTable();
-            //Add columns to the DataTable
             dataTable.Columns.Add("ID");
             dataTable.Columns.Add("Name");
-            //Add rows to the DataTable.
             dataTable.Rows.Add(new object[] { "E01", "Clay" });
             dataTable.Rows.Add(new object[] { "E02", "Thomas" });
             dataTable.Rows.Add(new object[] { "E03", "Andrew" });
             dataTable.Rows.Add(new object[] { "E04", "Paul" });
             dataTable.Rows.Add(new object[] { "E05", "Gary" });
-            //Assign data source.
             pdfGrid.DataSource = dataTable;
-            //Draw grid to the page of PDF document.
             pdfGrid.Draw(page, new PointF(10, 10));
-
-            // for writing the file
-            var fileStream = File.Create("Output.pdf");
-            //Save the document.
+            var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
             doc.Save(fileStream);
-            //close the document
             doc.Close(true);
         }
     }
