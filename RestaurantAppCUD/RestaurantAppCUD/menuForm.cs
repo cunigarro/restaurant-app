@@ -87,6 +87,32 @@ namespace RestaurantAppCUD
             }
 
             label3.Text = total.ToString();
+            button2.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AppLogicDBCUD.Connection objConnection;
+            objConnection = new AppLogicDBCUD.Connection();
+
+            string queryString;
+
+            AppLogicDBCUD.ClientOrder objClientOrder;
+            objClientOrder = new AppLogicDBCUD.ClientOrder();
+
+            objClientOrder.idClient = 1;
+            objClientOrder.date = DateTime.Now.ToString("M-d-yyyy");
+            objClientOrder.total = Int32.Parse(label3.Text);
+
+            objClientOrder.addClientOrder();
+
+            queryString = objClientOrder.readCommandString();
+            objConnection.setSentence(queryString);
+            objConnection.runSentence();
+
+
+            label3.Text = "Envío exitoso";
+            // this.Hide();
         }
     }
 }
