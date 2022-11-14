@@ -30,3 +30,4 @@ C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\ne
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\bin\Debug\net6.0-windows\zh-Hant\AeroWizard.resources.dll
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.clientForm.resources
 C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.menuForm.resources
+C:\Users\chris\Git\restaurant-app\RestaurantAppCUD\RestaurantAppCUD\obj\Debug\net6.0-windows\RestaurantAppCUD.invoiceForm.resources

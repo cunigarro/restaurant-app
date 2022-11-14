@@ -12,6 +12,7 @@ namespace RestaurantAppCUD
 {
     public partial class menuForm : Form
     {
+        invoiceForm invoiceFormInstance = new invoiceForm();
         public menuForm()
         {
             InitializeComponent();
@@ -110,9 +111,8 @@ namespace RestaurantAppCUD
             objConnection.setSentence(queryString);
             objConnection.runSentence();
 
-
-            label3.Text = "Envío exitoso";
-            // this.Hide();
+            this.Hide();
+            invoiceFormInstance.Show();
         }
     }
 }
