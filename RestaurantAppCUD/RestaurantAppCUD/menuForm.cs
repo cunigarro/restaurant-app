@@ -18,7 +18,6 @@ namespace RestaurantAppCUD
     {
         invoiceForm invoiceFormInstance = new invoiceForm();
         public string lastClientId;
-        public int currentMenu = 1;
         public static DataTable setValueForDataGrid = new DataTable();
         public static int totalInMenuForm = 0;
 
@@ -26,7 +25,7 @@ namespace RestaurantAppCUD
         {
             InitializeComponent();
             setMenuInformation();
-            setNamePriceInCheckedList();
+            setNamePriceInCheckedList(1);
         }
 
         public void setMenuInformation()
@@ -36,7 +35,7 @@ namespace RestaurantAppCUD
 
             string queryString;
 
-            queryString = objMenu.requestAMenu(currentMenu);
+            queryString = objMenu.requestAllMenus();
             objConnection.setSentence(queryString);
 
             DataSet myDataSet;
@@ -45,18 +44,12 @@ namespace RestaurantAppCUD
 
             DataTable firstTable = myDataSet.Tables[0];
 
-            foreach (DataRow row in firstTable.Rows)
-            {
-                foreach (DataColumn col in firstTable.Columns)
-                {
-                    object value = row[col];
-                    label1.Text = row["Name"].ToString();
-                    label2.Text = row["Description"].ToString();
-                }
-            }         
+            comboBox1.DataSource = firstTable;
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "ID_Menu";
         }
 
-        private List<Int32> getDishesWithMenuId()
+        private List<Int32> getDishesWithMenuId(int currentMenu)
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
             AppLogicDBCUD.Menu_Dish objMenuDish = new AppLogicDBCUD.Menu_Dish();
@@ -83,9 +76,9 @@ namespace RestaurantAppCUD
             return dishesIdList;
         }
 
-        private void setNamePriceInCheckedList()
+        private void setNamePriceInCheckedList(Int32 currentMenu)
         {
-            List<Int32> dishesIdList = getDishesWithMenuId();
+            List<Int32> dishesIdList = getDishesWithMenuId(currentMenu);
 
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
             AppLogicDBCUD.Dish objDish = new AppLogicDBCUD.Dish();
@@ -196,6 +189,15 @@ namespace RestaurantAppCUD
 
             this.Hide();
             invoiceFormInstance.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedValue.ToString() != "System.Data.DataRowView")
+            {
+                string value = comboBox1.SelectedValue.ToString();
+                setNamePriceInCheckedList(Int32.Parse(value));
+            }
         }
     }
 }

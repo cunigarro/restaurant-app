@@ -21,6 +21,11 @@ namespace AppLogicDBCUD
             return @"SELECT * FROM Menu WHERE ID_Menu=" + id;
         }
 
+        public string requestAllMenus()
+        {
+            return @"SELECT * FROM Menu";
+        }
+
         public string readCommandString()
         {
             return this.commandString;
