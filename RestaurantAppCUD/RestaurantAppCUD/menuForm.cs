@@ -20,16 +20,16 @@ namespace RestaurantAppCUD
         {
             InitializeComponent();
             setMenuInformation();
+            setNamePriceInCheckedList();
         }
 
         public void setMenuInformation()
         {
-            AppLogicDBCUD.Connection objConnection;
-            objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Menu objMenu = new AppLogicDBCUD.Menu();
 
             string queryString;
-            AppLogicDBCUD.Menu objMenu;
-            objMenu = new AppLogicDBCUD.Menu();
+
             queryString = objMenu.requestAMenu(1);
             objConnection.setSentence(queryString);
 
@@ -47,11 +47,16 @@ namespace RestaurantAppCUD
                     label1.Text = row["Name"].ToString();
                     label2.Text = row["Description"].ToString();
                 }
-            }
+            }         
+        }
+
+        private void setNamePriceInCheckedList()
+        {
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Dish objDish = new AppLogicDBCUD.Dish();
 
             string queryStringDishes;
-            AppLogicDBCUD.Dish objDish;
-            objDish = new AppLogicDBCUD.Dish();
+
             queryStringDishes = objDish.requestAlDishes();
             objConnection.setSentence(queryStringDishes);
 
@@ -63,7 +68,7 @@ namespace RestaurantAppCUD
 
             checkedListBox1.DataSource = firstTableDishes;
             checkedListBox1.DisplayMember = "Name";
-            checkedListBox1.ValueMember = "Price";            
+            checkedListBox1.ValueMember = "Price";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -83,12 +88,11 @@ namespace RestaurantAppCUD
 
         private string returnLastClient()
         {
-            AppLogicDBCUD.Connection objConnection;
-            objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Client objClient = new AppLogicDBCUD.Client();
 
             string queryStringLastClient;
-            AppLogicDBCUD.Client objClient;
-            objClient = new AppLogicDBCUD.Client();
+            
             objClient.getLastRegister();
             queryStringLastClient = objClient.readCommandString();
             objConnection.setSentence(queryStringLastClient);
@@ -127,13 +131,10 @@ namespace RestaurantAppCUD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AppLogicDBCUD.Connection objConnection;
-            objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.ClientOrder objClientOrder = new AppLogicDBCUD.ClientOrder();
 
             string queryString;
-
-            AppLogicDBCUD.ClientOrder objClientOrder;
-            objClientOrder = new AppLogicDBCUD.ClientOrder();
 
             objClientOrder.idClient = Int32.Parse(returnLastClient());
             objClientOrder.date = DateTime.Now.ToString("M-d-yyyy");
