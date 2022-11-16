@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace RestaurantAppCUD
     public partial class menuForm : Form
     {
         invoiceForm invoiceFormInstance = new invoiceForm();
+        public string lastClientId;
+
         public menuForm()
         {
             InitializeComponent();
@@ -60,7 +63,7 @@ namespace RestaurantAppCUD
 
             checkedListBox1.DataSource = firstTableDishes;
             checkedListBox1.DisplayMember = "Name";
-            checkedListBox1.ValueMember = "Price";
+            checkedListBox1.ValueMember = "Price";            
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -76,6 +79,37 @@ namespace RestaurantAppCUD
         private void label1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private string returnLastClient()
+        {
+            AppLogicDBCUD.Connection objConnection;
+            objConnection = new AppLogicDBCUD.Connection();
+
+            string queryStringLastClient;
+            AppLogicDBCUD.Client objClient;
+            objClient = new AppLogicDBCUD.Client();
+            objClient.getLastRegister();
+            queryStringLastClient = objClient.readCommandString();
+            objConnection.setSentence(queryStringLastClient);
+
+            DataSet myDataLastClient;
+            myDataLastClient = new DataSet();
+            myDataLastClient = objConnection.Request();
+
+            DataTable firstTableLastClient = myDataLastClient.Tables[0];
+
+            string lastClientId = "";
+
+            foreach (DataRow row in firstTableLastClient.Rows)
+            {
+                foreach (DataColumn col in firstTableLastClient.Columns)
+                {
+                    lastClientId = row["ID_Client"].ToString();
+                }
+            }
+
+            return lastClientId;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,7 +135,7 @@ namespace RestaurantAppCUD
             AppLogicDBCUD.ClientOrder objClientOrder;
             objClientOrder = new AppLogicDBCUD.ClientOrder();
 
-            objClientOrder.idClient = 1;
+            objClientOrder.idClient = Int32.Parse(returnLastClient());
             objClientOrder.date = DateTime.Now.ToString("M-d-yyyy");
             objClientOrder.total = Int32.Parse(label3.Text);
 

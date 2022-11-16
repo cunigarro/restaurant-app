@@ -24,6 +24,20 @@ namespace AppLogicDBCUD
             commandString = queryString;
         }
 
+        public void requestAClient(int id)
+        {
+            string queryString;
+            queryString = @"SELECT * FROM Client WHERE ID_Client = " + id + ";";
+            commandString = queryString;
+        }
+
+        public void getLastRegister()
+        {
+            string queryString;
+            queryString = @"SELECT TOP 1 * FROM Client ORDER BY ID_Client DESC;";
+            commandString = queryString;
+        }
+
         public string readCommandString()
         {
             return this.commandString;
