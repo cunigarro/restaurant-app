@@ -26,20 +26,6 @@ namespace RestaurantAppCUD
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void invoiceForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public static Stream GenerateStreamFromString(string s)
         {
             var stream = new MemoryStream();
@@ -65,7 +51,7 @@ namespace RestaurantAppCUD
             dataTable.Rows.Add(new object[] { "E05", "Gary" });
             pdfGrid.DataSource = dataTable;
             pdfGrid.Draw(page, new PointF(10, 10));
-            var fileStream = File.Create("C:\\Users\\chris\\Documents\\.pdf");
+            var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
             doc.Save(fileStream);
             doc.Close(true);
         }

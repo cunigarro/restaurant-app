@@ -71,21 +71,6 @@ namespace RestaurantAppCUD
             checkedListBox1.ValueMember = "Price";
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void stepWizardControl1_SelectedPageChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private string returnLastClient()
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();

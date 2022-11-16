@@ -63,7 +63,6 @@
             this.label2.Size = new System.Drawing.Size(33, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Edad";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -210,7 +209,6 @@
             this.Controls.Add(this.label1);
             this.Name = "clientForm";
             this.Text = "Registrese en nuestro sistema";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
