@@ -69,7 +69,7 @@ namespace RestaurantAppCUD
         private void invoiceForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = menuForm.setValueForDataGrid;
-            total.Text = "Total: " + menuForm.totalInMenuForm;
+            total.Text = "Costo total: " + menuForm.totalInMenuForm;
         }
 
         private string returnLastClientOrder()

@@ -100,6 +100,7 @@ namespace RestaurantAppCUD
 
             newDataTable.Columns.Add("ID_Dish", typeof(string));
             newDataTable.Columns.Add("Name", typeof(string));
+            newDataTable.Columns.Add("Name_Price", typeof(string));
             newDataTable.Columns.Add("Description", typeof(string));
             newDataTable.Columns.Add("Price", typeof(string));
 
@@ -107,12 +108,12 @@ namespace RestaurantAppCUD
             {
                 if (dishesIdList.Contains(Int32.Parse(row["ID_Dish"].ToString())))
                 {
-                    newDataTable.ImportRow(row);
+                    newDataTable.Rows.Add(new object[] { row["ID_Dish"], row["Name"], row["Name"] + " - " + row["Price"], row["Description"], row["Price"] });
                 }
             }
 
             checkedListBox1.DataSource = newDataTable;
-            checkedListBox1.DisplayMember = "Name";
+            checkedListBox1.DisplayMember = "Name_Price";
             checkedListBox1.ValueMember = "Price";
         }
 
@@ -149,7 +150,7 @@ namespace RestaurantAppCUD
             foreach (object itemChecked in checkedListBox1.CheckedItems)
             {
                 var row = (itemChecked as DataRowView).Row;
-                total += Int32.Parse(row.ItemArray[3].ToString());
+                total += Int32.Parse(row.ItemArray[4].ToString());
             }
 
             totalInMenuForm = total;

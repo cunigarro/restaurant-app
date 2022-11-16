@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +78,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 187);
+            this.label3.Location = new System.Drawing.Point(76, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 15);
+            this.label3.Size = new System.Drawing.Size(16, 15);
             this.label3.TabIndex = 7;
-            this.label3.Text = "0";
+            this.label3.Text = " 0";
             // 
             // comboBox1
             // 
@@ -92,11 +93,21 @@
             this.comboBox1.TabIndex = 8;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Costo total:";
+            // 
             // menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 220);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -119,5 +130,6 @@
         private Button button2;
         private Label label3;
         private ComboBox comboBox1;
+        private Label label2;
     }
 }
