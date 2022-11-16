@@ -42,24 +42,19 @@ namespace RestaurantAppCUD
             PdfDocument doc = new PdfDocument();
             PdfPage page = doc.Pages.Add();
             PdfGrid pdfGrid = new PdfGrid();
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("ID");
-            dataTable.Columns.Add("Name");
-            dataTable.Rows.Add(new object[] { "E01", "Clay" });
-            dataTable.Rows.Add(new object[] { "E02", "Thomas" });
-            dataTable.Rows.Add(new object[] { "E03", "Andrew" });
-            dataTable.Rows.Add(new object[] { "E04", "Paul" });
-            dataTable.Rows.Add(new object[] { "E05", "Gary" });
-            pdfGrid.DataSource = dataTable;
+            menuForm.setValueForDataGrid.Rows.Add(new object[] { "Total", "", "", menuForm.totalInMenuForm });
+            pdfGrid.DataSource = menuForm.setValueForDataGrid;
             pdfGrid.Draw(page, new PointF(10, 10));
             var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
             doc.Save(fileStream);
             doc.Close(true);
+            this.Close();
         }
 
         private void invoiceForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = menuForm.setValueForDataGrid;
+            total.Text = "Total: " + menuForm.totalInMenuForm;
         }
     }
 }

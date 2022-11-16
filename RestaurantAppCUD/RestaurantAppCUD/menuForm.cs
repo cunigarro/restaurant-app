@@ -20,6 +20,7 @@ namespace RestaurantAppCUD
         public string lastClientId;
         public int currentMenu = 1;
         public static DataTable setValueForDataGrid = new DataTable();
+        public static int totalInMenuForm = 0;
 
         public menuForm()
         {
@@ -156,6 +157,8 @@ namespace RestaurantAppCUD
                 total += Int32.Parse(row.ItemArray[3].ToString());
             }
 
+            totalInMenuForm = total;
+
             label3.Text = total.ToString();
             button2.Enabled = true;
         }
@@ -184,7 +187,7 @@ namespace RestaurantAppCUD
             dataTable.Columns.Add("Description", typeof(string));
             dataTable.Columns.Add("Price", typeof(string));
 
-            foreach (DataRowView row in checkedListBox1.SelectedItems)
+            foreach (DataRowView row in checkedListBox1.CheckedItems)
             {
                 dataTable.ImportRow(row.Row);
             }
