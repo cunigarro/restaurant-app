@@ -1,13 +1,16 @@
-﻿using System;
+﻿using AppLogicDBCUD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace RestaurantAppCUD
 {
@@ -15,6 +18,8 @@ namespace RestaurantAppCUD
     {
         invoiceForm invoiceFormInstance = new invoiceForm();
         public string lastClientId;
+        public int currentMenu = 1;
+        
 
         public menuForm()
         {
@@ -30,7 +35,7 @@ namespace RestaurantAppCUD
 
             string queryString;
 
-            queryString = objMenu.requestAMenu(1);
+            queryString = objMenu.requestAMenu(currentMenu);
             objConnection.setSentence(queryString);
 
             DataSet myDataSet;
@@ -50,8 +55,37 @@ namespace RestaurantAppCUD
             }         
         }
 
+        private List<Int32> getDishesWithMenuId()
+        {
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.Menu_Dish objMenuDish = new AppLogicDBCUD.Menu_Dish();
+
+            string queryDishesWithMenuId;
+
+            objMenuDish.getDishWithMenuId(currentMenu);
+            queryDishesWithMenuId = objMenuDish.readCommandString();
+            objConnection.setSentence(queryDishesWithMenuId);
+
+            DataSet dishesIdDataSet;
+            dishesIdDataSet = new DataSet();
+            dishesIdDataSet = objConnection.Request();
+
+            DataTable dishesIdTable = dishesIdDataSet.Tables[0];
+            List<Int32> dishesIdList = new List<Int32>();
+
+            foreach (DataRow row in dishesIdTable.Rows)
+            {
+                Int32 dishId = Int32.Parse(row["ID_Dish"].ToString());
+                dishesIdList.Add(dishId);
+            }
+
+            return dishesIdList;
+        }
+
         private void setNamePriceInCheckedList()
         {
+            List<Int32> dishesIdList = getDishesWithMenuId();
+
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
             AppLogicDBCUD.Dish objDish = new AppLogicDBCUD.Dish();
 
@@ -66,7 +100,22 @@ namespace RestaurantAppCUD
 
             DataTable firstTableDishes = myDataSetDishes.Tables[0];
 
-            checkedListBox1.DataSource = firstTableDishes;
+            DataTable newDataTable = new DataTable();
+
+            newDataTable.Columns.Add("ID_Dish", typeof(string));
+            newDataTable.Columns.Add("Name", typeof(string));
+            newDataTable.Columns.Add("Description", typeof(string));
+            newDataTable.Columns.Add("Price", typeof(string));
+
+            foreach (DataRow row in firstTableDishes.Rows)
+            {
+                if (dishesIdList.Contains(Int32.Parse(row["ID_Dish"].ToString())))
+                {
+                    newDataTable.ImportRow(row);
+                }
+            }
+
+            checkedListBox1.DataSource = newDataTable;
             checkedListBox1.DisplayMember = "Name";
             checkedListBox1.ValueMember = "Price";
         }
@@ -92,10 +141,7 @@ namespace RestaurantAppCUD
 
             foreach (DataRow row in firstTableLastClient.Rows)
             {
-                foreach (DataColumn col in firstTableLastClient.Columns)
-                {
-                    lastClientId = row["ID_Client"].ToString();
-                }
+                lastClientId = row["ID_Client"].ToString();
             }
 
             return lastClientId;
@@ -133,6 +179,33 @@ namespace RestaurantAppCUD
 
             this.Hide();
             invoiceFormInstance.Show();
+        }
+
+        public static DataTable ToDataTable<T>(List<T> items)
+        {
+            DataTable dataTable = new DataTable(typeof(T).Name);
+
+            //Get all the properties
+            PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (PropertyInfo prop in Props)
+            {
+                //Defining type of data column gives proper data table 
+                var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
+                //Setting column names as Property names
+                dataTable.Columns.Add(prop.Name, type);
+            }
+            foreach (T item in items)
+            {
+                var values = new object[Props.Length];
+                for (int i = 0; i < Props.Length; i++)
+                {
+                    //inserting property values to datatable rows
+                    values[i] = Props[i].GetValue(item, null);
+                }
+                dataTable.Rows.Add(values);
+            }
+            //put a breakpoint here and check datatable
+            return dataTable;
         }
     }
 }
