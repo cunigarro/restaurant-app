@@ -14,6 +14,7 @@ using Syncfusion.Drawing;
 using System.IO;
 using PointF = Syncfusion.Drawing.PointF;
 using Syncfusion.Pdf.Grid;
+using AppLogicDBCUD;
 
 namespace RestaurantAppCUD
 {
@@ -54,6 +55,11 @@ namespace RestaurantAppCUD
             var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
             doc.Save(fileStream);
             doc.Close(true);
+        }
+
+        private void invoiceForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = menuForm.setValueForDataGrid;
         }
     }
 }
