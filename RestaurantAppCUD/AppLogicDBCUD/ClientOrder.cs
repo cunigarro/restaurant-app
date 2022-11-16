@@ -21,6 +21,13 @@ namespace AppLogicDBCUD
             commandString = queryString;
         }
 
+        public void getLastRegister()
+        {
+            string queryString;
+            queryString = @"SELECT TOP 1 * FROM ClientOrder ORDER BY ID_ClientOrder DESC;";
+            commandString = queryString;
+        }
+
         public string readCommandString()
         {
             return this.commandString;

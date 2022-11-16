@@ -38,10 +38,15 @@ namespace AppLogicDBCUD
                 command.ExecuteNonQuery();
                 dbTransaction.Commit();
                 return "Todo Ok";
-            } catch (Exception e)
+            } 
+            catch (Exception e)
             {
                 dbTransaction.Rollback();
                 return "Hubo un error: " + e.Message;
+            }
+            finally
+            {
+                dbConnection.Close();
             }
         }
 

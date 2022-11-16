@@ -39,6 +39,20 @@ namespace RestaurantAppCUD
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            Connection objConnection = new Connection();
+            ClientOrder_Dish objClientOrderDish = new ClientOrder_Dish();
+
+            string queryStringClientOrderDish;
+
+            foreach (DataRow dishRow in menuForm.setValueForDataGrid.Rows)
+            {
+                objClientOrderDish.idClientOrder = Int32.Parse(returnLastClientOrder());
+                objClientOrderDish.idDish = Int32.Parse(dishRow["ID_Dish"].ToString());
+                queryStringClientOrderDish = objClientOrderDish.registerDish();
+                objConnection.setSentence(queryStringClientOrderDish);
+                objConnection.runSentence();
+            }
+
             PdfDocument doc = new PdfDocument();
             PdfPage page = doc.Pages.Add();
             PdfGrid pdfGrid = new PdfGrid();
@@ -48,6 +62,7 @@ namespace RestaurantAppCUD
             var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
             doc.Save(fileStream);
             doc.Close(true);
+
             this.Close();
         }
 
@@ -55,6 +70,33 @@ namespace RestaurantAppCUD
         {
             dataGridView1.DataSource = menuForm.setValueForDataGrid;
             total.Text = "Total: " + menuForm.totalInMenuForm;
+        }
+
+        private string returnLastClientOrder()
+        {
+            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
+            AppLogicDBCUD.ClientOrder objClientOrder = new AppLogicDBCUD.ClientOrder();
+
+            string queryStringClientOrder;
+
+            objClientOrder.getLastRegister();
+            queryStringClientOrder = objClientOrder.readCommandString();
+            objConnection.setSentence(queryStringClientOrder);
+
+            DataSet myDataLastClient;
+            myDataLastClient = new DataSet();
+            myDataLastClient = objConnection.Request();
+
+            DataTable firstTableLastClient = myDataLastClient.Tables[0];
+
+            string lastClientOrderId = "";
+
+            foreach (DataRow row in firstTableLastClient.Rows)
+            {
+                lastClientOrderId = row["ID_ClientOrder"].ToString();
+            }
+
+            return lastClientOrderId;
         }
     }
 }
