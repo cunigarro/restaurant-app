@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppLogicDBCUD
+namespace AppLogicDBCUD.Models
 {
     public class Dish
     {
@@ -25,7 +25,7 @@ namespace AppLogicDBCUD
 
         public string readCommandString()
         {
-            return this.commandString;
+            return commandString;
         }
     }
 }

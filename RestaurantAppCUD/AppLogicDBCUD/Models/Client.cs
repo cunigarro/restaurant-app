@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppLogicDBCUD
+namespace AppLogicDBCUD.Models
 {
     public class Client
-    {   
+    {
         public string name { get; set; }
         public string lastName { get; set; }
         public int age { get; set; }
@@ -20,7 +20,7 @@ namespace AppLogicDBCUD
         public void addClient()
         {
             string queryString;
-            queryString = @"INSERT INTO Client(Name, LastName, Age, DNI, Address, Email) VALUES('" + this.name + "', '" + this.lastName + "', " + this.age + ", " + this.dni + ", '" + this.address + "', '" + this.email + "')";
+            queryString = @"INSERT INTO Client(Name, LastName, Age, DNI, Address, Email) VALUES('" + name + "', '" + lastName + "', " + age + ", " + dni + ", '" + address + "', '" + email + "')";
             commandString = queryString;
         }
 
@@ -40,7 +40,7 @@ namespace AppLogicDBCUD
 
         public string readCommandString()
         {
-            return this.commandString;
+            return commandString;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using AppLogicDBCUD;
+﻿using AppLogicDBCUD.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +33,7 @@ namespace RestaurantAppCUD
         public void setMenuInformation()
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.Menu objMenu = new AppLogicDBCUD.Menu();
+            Menu objMenu = new Menu();
 
             string queryString;
 
@@ -54,7 +54,7 @@ namespace RestaurantAppCUD
         private List<Int32> getDishesWithMenuId(int currentMenu)
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.Menu_Dish objMenuDish = new AppLogicDBCUD.Menu_Dish();
+            Menu_Dish objMenuDish = new Menu_Dish();
 
             string queryDishesWithMenuId;
 
@@ -83,7 +83,7 @@ namespace RestaurantAppCUD
             List<Int32> dishesIdList = getDishesWithMenuId(currentMenu);
 
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.Dish objDish = new AppLogicDBCUD.Dish();
+            Dish objDish = new Dish();
 
             string queryStringDishes;
 
@@ -120,7 +120,7 @@ namespace RestaurantAppCUD
         private string returnLastClient()
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.Client objClient = new AppLogicDBCUD.Client();
+            Client objClient = new Client();
 
             string queryStringLastClient;
             
@@ -162,7 +162,7 @@ namespace RestaurantAppCUD
         private void button2_Click(object sender, EventArgs e)
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.ClientOrder objClientOrder = new AppLogicDBCUD.ClientOrder();
+            ClientOrder objClientOrder = new ClientOrder();
 
             string queryString;
 

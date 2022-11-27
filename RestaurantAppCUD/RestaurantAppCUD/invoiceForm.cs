@@ -15,6 +15,7 @@ using System.IO;
 using PointF = Syncfusion.Drawing.PointF;
 using Syncfusion.Pdf.Grid;
 using AppLogicDBCUD;
+using AppLogicDBCUD.Models;
 
 namespace RestaurantAppCUD
 {
@@ -75,7 +76,7 @@ namespace RestaurantAppCUD
         private string returnLastClientOrder()
         {
             AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            AppLogicDBCUD.ClientOrder objClientOrder = new AppLogicDBCUD.ClientOrder();
+            ClientOrder objClientOrder = new ClientOrder();
 
             string queryStringClientOrder;
 

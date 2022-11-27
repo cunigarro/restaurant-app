@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppLogicDBCUD
+namespace AppLogicDBCUD.Models
 {
     public class ClientOrder
     {
@@ -17,7 +17,7 @@ namespace AppLogicDBCUD
         public void addClientOrder()
         {
             string queryString;
-            queryString = @"INSERT INTO ClientOrder(ID_Client, Date, Total) VALUES(" + this.idClient + ", '" + this.date + "', " + this.total + ")";
+            queryString = @"INSERT INTO ClientOrder(ID_Client, Date, Total) VALUES(" + idClient + ", '" + date + "', " + total + ")";
             commandString = queryString;
         }
 
@@ -30,7 +30,7 @@ namespace AppLogicDBCUD
 
         public string readCommandString()
         {
-            return this.commandString;
+            return commandString;
         }
     }
 }

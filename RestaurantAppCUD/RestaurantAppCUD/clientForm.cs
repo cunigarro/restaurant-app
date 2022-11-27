@@ -1,5 +1,6 @@
 using System.Data;
 using System.Windows.Forms;
+using AppLogicDBCUD.Models;
 
 namespace RestaurantAppCUD
 {
@@ -21,8 +22,8 @@ namespace RestaurantAppCUD
 
                 string queryString;
 
-                AppLogicDBCUD.Client objClient;
-                objClient = new AppLogicDBCUD.Client();
+                Client objClient;
+                objClient = new Client();
 
                 objClient.name = nameTextBox.Text;
                 objClient.lastName = lastNameTextBox.Text;

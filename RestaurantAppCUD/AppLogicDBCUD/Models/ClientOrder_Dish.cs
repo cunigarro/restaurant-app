@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppLogicDBCUD
+namespace AppLogicDBCUD.Models
 {
     public class ClientOrder_Dish
     {
@@ -13,7 +13,7 @@ namespace AppLogicDBCUD
 
         public string registerDish()
         {
-            return @"INSERT INTO ClientOrder_Dish(ID_ClientOrder, ID_Dish) VALUES(" + this.idClientOrder + ", " + this.idDish + ");";
+            return @"INSERT INTO ClientOrder_Dish(ID_ClientOrder, ID_Dish) VALUES(" + idClientOrder + ", " + idDish + ");";
         }
     }
 }
