@@ -42,25 +42,7 @@ namespace RestaurantAppCUD
 
         private void setNamePriceInCheckedList(Int32 currentMenu)
         {
-            List<Int32> dishesIdList = MenuFormService.getDishesWithMenuId(currentMenu);
-
-            DataTable firstTableDishes = MenuFormService.getAllDishes();
-
-            DataTable newDataTable = new DataTable();
-
-            newDataTable.Columns.Add("ID_Dish", typeof(string));
-            newDataTable.Columns.Add("Name", typeof(string));
-            newDataTable.Columns.Add("Name_Price", typeof(string));
-            newDataTable.Columns.Add("Description", typeof(string));
-            newDataTable.Columns.Add("Price", typeof(string));
-
-            foreach (DataRow row in firstTableDishes.Rows)
-            {
-                if (dishesIdList.Contains(Int32.Parse(row["ID_Dish"].ToString())))
-                {
-                    newDataTable.Rows.Add(new object[] { row["ID_Dish"], row["Name"], row["Name"] + " - " + row["Price"], row["Description"], row["Price"] });
-                }
-            }
+            DataTable newDataTable = MenuFormService.getDishesWithPrice(currentMenu);
 
             checkedListBox1.DataSource = newDataTable;
             checkedListBox1.DisplayMember = "Name_Price";

@@ -61,23 +61,6 @@ namespace AppLogicDBCUD.Controllers
             return dishesIdList;
         }
 
-        static public DataSet getDishesWithPrice(int currentMenu)
-        {
-            Connection objConnection = new Connection();
-            Dish objDish = new Dish();
-
-            string queryString;
-
-            objDish.requestAllDishes();
-            queryString = objDish.readCommandString();
-            objConnection.setSentence(queryString);
-
-            DataSet myDataSetDishes = new DataSet();
-            myDataSetDishes = objConnection.Request();
-
-            return myDataSetDishes;
-        }
-
         static public DataTable getAllDishes()
         {
             Connection objConnection = new Connection();
@@ -114,6 +97,30 @@ namespace AppLogicDBCUD.Controllers
             DataTable firstTableMenus = myDataSet.Tables[0];
 
             return firstTableMenus;
+        }
+
+        static public DataTable getDishesWithPrice(int currentMenu)
+        {
+            List<Int32> dishesIdList = getDishesWithMenuId(currentMenu);
+            DataTable allDishes = getAllDishes();
+
+            DataTable newDataTable = new DataTable();
+
+            newDataTable.Columns.Add("ID_Dish", typeof(string));
+            newDataTable.Columns.Add("Name", typeof(string));
+            newDataTable.Columns.Add("Name_Price", typeof(string));
+            newDataTable.Columns.Add("Description", typeof(string));
+            newDataTable.Columns.Add("Price", typeof(string));
+
+            foreach (DataRow row in allDishes.Rows)
+            {
+                if (dishesIdList.Contains(Int32.Parse(row["ID_Dish"].ToString())))
+                {
+                    newDataTable.Rows.Add(new object[] { row["ID_Dish"], row["Name"], row["Name"] + " - " + row["Price"], row["Description"], row["Price"] });
+                }
+            }
+
+            return newDataTable;    
         }
     }
 }
