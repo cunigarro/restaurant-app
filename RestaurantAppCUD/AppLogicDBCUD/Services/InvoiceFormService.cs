@@ -12,7 +12,7 @@ namespace AppLogicCUD.Services
         {
             ClientOrder objClientOrder = new ClientOrder();
 
-            DataTable firstTableLastClient = objClientOrder.getLastRegister();
+            DataTable firstTableLastClient = objClientOrder.findFirstByOrderByIdDesc();
 
             string lastClientOrderId = "";
 

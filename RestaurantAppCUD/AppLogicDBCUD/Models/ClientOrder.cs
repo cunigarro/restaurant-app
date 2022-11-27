@@ -23,7 +23,7 @@ namespace AppLogicCUD.Models
             connectionService.runCommand(queryString);
         }
 
-        public DataTable getLastRegister()
+        public DataTable findFirstByOrderByIdDesc()
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT TOP 1 * FROM ClientOrder ORDER BY ID_ClientOrder DESC;";

@@ -14,7 +14,7 @@ namespace AppLogicCUD.Services
         {
             Client objClient = new Client();
 
-            DataTable firstTableLastClient = objClient.getLastRegister();
+            DataTable firstTableLastClient = objClient.findFirstByOrderByIdDesc();
 
             string lastClientId = "";
 

@@ -51,9 +51,8 @@ namespace AppLogicCUD.Models
             return connectionService.consult(queryString);
         }
 
-        public DataTable getLastRegister()
+        public DataTable findFirstByOrderByIdDesc()
         {
-
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT TOP 1 * FROM Client ORDER BY ID_Client DESC;";
             return connectionService.consult(queryString);
