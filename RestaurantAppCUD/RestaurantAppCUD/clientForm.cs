@@ -1,5 +1,6 @@
 using System.Data;
 using System.Windows.Forms;
+using AppLogicDBCUD.Controllers;
 using AppLogicDBCUD.Models;
 
 namespace RestaurantAppCUD
@@ -8,7 +9,7 @@ namespace RestaurantAppCUD
     {
         menuForm menuFormInstance = new menuForm();
 
-        public clientForm()
+        public clientForm( )
         {
             InitializeComponent();
         }
@@ -17,11 +18,6 @@ namespace RestaurantAppCUD
         {
             try
             {
-                AppLogicDBCUD.Connection objConnection;
-                objConnection = new AppLogicDBCUD.Connection();
-
-                string queryString;
-
                 Client objClient;
                 objClient = new Client();
 
@@ -32,11 +28,7 @@ namespace RestaurantAppCUD
                 objClient.address = addressTextBox.Text;
                 objClient.email = emailTextBox.Text;
 
-                objClient.addClient();
-
-                queryString = objClient.readCommandString();
-                objConnection.setSentence(queryString);
-                objConnection.runSentence();
+                ClientFormService.saveClientData(objClient);
 
                 notification.Text = "Cliente agregado de manera exitosa.";
 
@@ -47,11 +39,6 @@ namespace RestaurantAppCUD
             {
                 notification.Text = "Error: " + ex.Message;
             }
-        }
-
-        private void notification_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

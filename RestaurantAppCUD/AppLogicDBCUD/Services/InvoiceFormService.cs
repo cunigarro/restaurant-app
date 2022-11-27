@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppLogicDBCUD.Controllers
 {
-    public class InvoiceFormController
+    public class InvoiceFormService
     {
     }
 }

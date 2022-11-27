@@ -185,7 +185,6 @@
             this.notification.TabIndex = 27;
             this.notification.Text = "                                                                                 " +
     "                             ";
-            this.notification.Click += new System.EventHandler(this.notification_Click);
             // 
             // clientForm
             // 
