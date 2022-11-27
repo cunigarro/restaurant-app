@@ -32,7 +32,7 @@ namespace AppLogicCUD.Services
         {
             Menu_Dish objMenuDish = new Menu_Dish();
 
-            DataTable dishesIdTable = objMenuDish.getARegister(currentMenu);
+            DataTable dishesIdTable = objMenuDish.findById(currentMenu);
             List<Int32> dishesIdList = new List<Int32>();
 
             foreach (DataRow row in dishesIdTable.Rows)
@@ -48,7 +48,7 @@ namespace AppLogicCUD.Services
         {
             Dish objDish = new Dish();
 
-            DataTable firstTableDishes = objDish.getAllRegisters();
+            DataTable firstTableDishes = objDish.findAll();
 
             return firstTableDishes;
         }
@@ -57,7 +57,7 @@ namespace AppLogicCUD.Services
         {
             Menu objMenu = new Menu();
 
-            DataTable firstTableMenus = objMenu.getAllRegisters();
+            DataTable firstTableMenus = objMenu.findAll();
 
             return firstTableMenus;
         }

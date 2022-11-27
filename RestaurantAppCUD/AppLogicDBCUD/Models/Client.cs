@@ -44,7 +44,7 @@ namespace AppLogicCUD.Models
             connectionService.runCommand(queryString);
         }
 
-        public DataTable getARegister(int id)
+        public DataTable findById(int id)
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT * FROM Client WHERE ID_Client = " + id + ";";

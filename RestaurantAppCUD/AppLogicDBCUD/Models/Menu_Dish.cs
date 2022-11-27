@@ -11,7 +11,7 @@ namespace AppLogicCUD.Models
         public string IdMenu { get { return idMenu; } set { idMenu = value; } }
         public string IdDish { get { return idDish; } set { idDish = value; } }
 
-        public DataTable getARegister(int id)
+        public DataTable findById(int id)
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT * FROM Menu_Dish WHERE ID_Menu = " + id + ";";

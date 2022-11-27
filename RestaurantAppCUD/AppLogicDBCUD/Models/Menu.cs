@@ -12,14 +12,14 @@ namespace AppLogicCUD.Models
         public string Name { get { return name; } set { name = value; } }
         public string Description { get { return description; } set { description = value; } } 
 
-        public DataTable getARegister(int id)
+        public DataTable findById(int id)
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT * FROM Menu WHERE ID_Menu=" + id;
             return connectionService.consult(queryString);
         }
 
-        public DataTable getAllRegisters()
+        public DataTable findAll()
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"SELECT * FROM Menu";
