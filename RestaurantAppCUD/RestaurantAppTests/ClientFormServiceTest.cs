@@ -7,7 +7,7 @@ namespace RestaurantAppTests
     public class ClientFormServiceTest
     {
         [Test]
-        public void SaveClient()
+        public void SaveClientData()
         {
             Client client = new Client();
 
@@ -34,6 +34,23 @@ namespace RestaurantAppTests
             }
 
             client.delete(Int32.Parse(lastClientId));
+        }
+
+        [Test]
+        public void GetLastClientId()
+        {
+            Client client = new Client();
+
+            string lastClientIdFromService = ClientFormService.getLastClientId();
+
+            string lastClientId = "";
+
+            foreach (DataRow row in client.findFirstByOrderByIdDesc().Rows)
+            {
+                lastClientId = row["ID_Client"].ToString();
+            }
+
+            Assert.That(lastClientIdFromService, Is.EqualTo(lastClientId));
         }
     }
 }
