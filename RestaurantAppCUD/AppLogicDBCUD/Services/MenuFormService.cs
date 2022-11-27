@@ -1,8 +1,8 @@
-﻿using AppLogicDBCUD.Models;
+﻿using AppLogicCUD.Models;
 using System.Data;
 using System.Text;
 
-namespace AppLogicDBCUD.Services
+namespace AppLogicCUD.Services
 {
     public class MenuFormService
     {

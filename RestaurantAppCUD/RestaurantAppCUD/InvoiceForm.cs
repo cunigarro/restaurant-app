@@ -1,4 +1,4 @@
-﻿using AppLogicDBCUD.Services;
+﻿using AppLogicCUD.Services;
 
 namespace RestaurantAppCUD
 {

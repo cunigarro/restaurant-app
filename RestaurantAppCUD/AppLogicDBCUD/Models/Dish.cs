@@ -1,8 +1,8 @@
-﻿using AppLogicDBCUD.Services;
+﻿using AppLogicCUD.Services;
 using System.Data;
 using System.Net;
 
-namespace AppLogicDBCUD.Models
+namespace AppLogicCUD.Models
 {
     public class Dish
     {

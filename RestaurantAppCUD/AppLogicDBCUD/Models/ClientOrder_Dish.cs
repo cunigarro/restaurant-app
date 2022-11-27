@@ -1,8 +1,8 @@
-﻿using AppLogicDBCUD.Services;
+﻿using AppLogicCUD.Services;
 using System.Net;
 using System.Xml.Linq;
 
-namespace AppLogicDBCUD.Models
+namespace AppLogicCUD.Models
 {
     public class ClientOrder_Dish
     {

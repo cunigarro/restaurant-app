@@ -1,9 +1,9 @@
-﻿using AppLogicDBCUD.Services;
+﻿using AppLogicCUD.Services;
 using System.Data;
 using System.Net;
 using System.Xml.Linq;
 
-namespace AppLogicDBCUD.Models
+namespace AppLogicCUD.Models
 {
     public class ClientOrder
     {

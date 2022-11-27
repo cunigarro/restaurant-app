@@ -1,11 +1,12 @@
 namespace RestaurantAppTests
 {
-    public class ClientServiceTest
+    public class ClientFormServiceTest
     {
 
         [Test]
         public void Test1()
         {
+
             Assert.Pass();
         }
     }

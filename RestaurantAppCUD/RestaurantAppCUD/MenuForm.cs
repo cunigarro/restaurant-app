@@ -1,5 +1,5 @@
-﻿using AppLogicDBCUD.Services;
-using AppLogicDBCUD.Models;
+﻿using AppLogicCUD.Services;
+using AppLogicCUD.Models;
 using System.Data;
 
 namespace RestaurantAppCUD

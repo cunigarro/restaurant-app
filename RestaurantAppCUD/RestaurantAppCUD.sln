@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantAppCUD", "RestaurantAppCUD\RestaurantAppCUD.csproj", "{6FC59A17-FB88-4B39-A538-F0B5287B0391}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogicDBCUD", "AppLogicDBCUD\AppLogicDBCUD.csproj", "{632BCB78-A327-4508-BEE6-9A101E4FF37F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppLogicCUD", "AppLogicDBCUD\AppLogicCUD.csproj", "{632BCB78-A327-4508-BEE6-9A101E4FF37F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantAppTests", "RestaurantAppTests\RestaurantAppTests.csproj", "{2149F42C-1A1D-4637-88AD-9AC5975E3662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantAppTests", "RestaurantAppTests\RestaurantAppTests.csproj", "{2149F42C-1A1D-4637-88AD-9AC5975E3662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

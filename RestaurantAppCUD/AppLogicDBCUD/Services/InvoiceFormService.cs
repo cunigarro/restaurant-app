@@ -1,10 +1,10 @@
-﻿using AppLogicDBCUD.Models;
+﻿using AppLogicCUD.Models;
 using System.Data;
 using Syncfusion.Pdf;
 using PointF = Syncfusion.Drawing.PointF;
 using Syncfusion.Pdf.Grid;
 
-namespace AppLogicDBCUD.Services
+namespace AppLogicCUD.Services
 {
     public class InvoiceFormService
     {

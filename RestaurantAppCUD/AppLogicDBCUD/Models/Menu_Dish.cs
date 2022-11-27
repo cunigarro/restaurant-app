@@ -1,7 +1,7 @@
-﻿using AppLogicDBCUD.Services;
+﻿using AppLogicCUD.Services;
 using System.Data;
 
-namespace AppLogicDBCUD.Models
+namespace AppLogicCUD.Models
 {
     public class Menu_Dish
     {

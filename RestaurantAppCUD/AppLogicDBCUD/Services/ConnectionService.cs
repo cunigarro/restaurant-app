@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.OleDb;
 
-namespace AppLogicDBCUD.Services
+namespace AppLogicCUD.Services
 {
     public class ConnectionService
     {

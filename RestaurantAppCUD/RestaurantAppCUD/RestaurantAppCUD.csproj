@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppLogicDBCUD\AppLogicDBCUD.csproj" />
+    <ProjectReference Include="..\AppLogicDBCUD\AppLogicCUD.csproj" />
   </ItemGroup>
 
 </Project>
