@@ -1,22 +1,21 @@
-﻿namespace AppLogicDBCUD.Models
+﻿using AppLogicDBCUD.Services;
+using System.Data;
+
+namespace AppLogicDBCUD.Models
 {
     public class Menu_Dish
     {
-        public string idMenu { get; set; }
-        public string idDish { get; set; }
+        private string idMenu;
 
-        private string commandString;
+        private string idDish;
+        public string IdMenu { get { return idMenu; } set { idMenu = value; } }
+        public string IdDish { get { return idDish; } set { idDish = value; } }
 
-        public void getDishWithMenuId(int menuId)
+        public DataTable getARegister(int id)
         {
-            string queryString;
-            queryString = @"SELECT * FROM Menu_Dish WHERE ID_Menu = " + menuId + ";";
-            commandString = queryString;
-        }
-
-        public string readCommandString()
-        {
-            return commandString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Menu_Dish WHERE ID_Menu = " + id + ";";
+            return connectionService.consult(queryString);
         }
     }
 }

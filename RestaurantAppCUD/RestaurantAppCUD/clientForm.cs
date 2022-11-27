@@ -16,15 +16,14 @@ namespace RestaurantAppCUD
         {
             try
             {
-                Client objClient;
-                objClient = new Client();
+                Client objClient = new Client();
 
-                objClient.name = nameTextBox.Text;
-                objClient.lastName = lastNameTextBox.Text;
-                objClient.age = Int16.Parse(ageTextBox.Text);
-                objClient.dni = Int32.Parse(dniTextBox.Text);
-                objClient.address = addressTextBox.Text;
-                objClient.email = emailTextBox.Text;
+                objClient.Name = nameTextBox.Text;
+                objClient.LastName = lastNameTextBox.Text;
+                objClient.Age = Int16.Parse(ageTextBox.Text);
+                objClient.Dni = Int32.Parse(dniTextBox.Text);
+                objClient.Address = addressTextBox.Text;
+                objClient.Email = emailTextBox.Text;
 
                 ClientFormService.saveClientData(objClient);
 

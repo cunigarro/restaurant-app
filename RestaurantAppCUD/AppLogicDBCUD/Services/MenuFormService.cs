@@ -25,30 +25,14 @@ namespace AppLogicDBCUD.Services
 
         static public void registerOrder(ClientOrder objClientOrder)
         {
-            Connection objConnection;
-            objConnection = new Connection();
-
-            objClientOrder.addClientOrder();
-            string queryString = objClientOrder.readCommandString();
-            objConnection.setSentence(queryString);
-            objConnection.runSentence();
+            objClientOrder.insert();
         }
 
         static public List<Int32> getDishesWithMenuId(int currentMenu)
         {
-            Connection objConnection = new Connection();
             Menu_Dish objMenuDish = new Menu_Dish();
 
-            string queryDishesWithMenuId;
-
-            objMenuDish.getDishWithMenuId(currentMenu);
-            queryDishesWithMenuId = objMenuDish.readCommandString();
-            objConnection.setSentence(queryDishesWithMenuId);
-
-            DataSet dishesIdDataSet = new DataSet();
-            dishesIdDataSet = objConnection.Request();
-
-            DataTable dishesIdTable = dishesIdDataSet.Tables[0];
+            DataTable dishesIdTable = objMenuDish.getARegister(currentMenu);
             List<Int32> dishesIdList = new List<Int32>();
 
             foreach (DataRow row in dishesIdTable.Rows)
@@ -62,38 +46,18 @@ namespace AppLogicDBCUD.Services
 
         static public DataTable getAllDishes()
         {
-            Connection objConnection = new Connection();
             Dish objDish = new Dish();
 
-            string queryStringDishes;
-
-            queryStringDishes = objDish.requestAllDishes();
-            objConnection.setSentence(queryStringDishes);
-
-            DataSet myDataSetDishes;
-            myDataSetDishes = new DataSet();
-            myDataSetDishes = objConnection.Request();
-
-            DataTable firstTableDishes = myDataSetDishes.Tables[0];
+            DataTable firstTableDishes = objDish.getAllRegisters();
 
             return firstTableDishes;
         }
 
         static public DataTable getAllMenus()
         {
-            Connection objConnection = new Connection();
             Menu objMenu = new Menu();
 
-            string queryString;
-
-            queryString = objMenu.requestAllMenus();
-            objConnection.setSentence(queryString);
-
-            DataSet myDataSet;
-            myDataSet = new DataSet();
-            myDataSet = objConnection.Request();
-
-            DataTable firstTableMenus = myDataSet.Tables[0];
+            DataTable firstTableMenus = objMenu.getAllRegisters();
 
             return firstTableMenus;
         }

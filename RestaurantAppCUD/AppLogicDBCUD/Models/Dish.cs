@@ -1,25 +1,29 @@
-﻿namespace AppLogicDBCUD.Models
+﻿using AppLogicDBCUD.Services;
+using System.Data;
+using System.Net;
+
+namespace AppLogicDBCUD.Models
 {
     public class Dish
     {
-        public string name { get; set; }
-        public string description { get; set; }
+        private string name;
 
-        private string commandString;
+        private string description;
+        public string Name { get { return name; } set { name = value; } }
+        public string Description { get { return description; } set { description = value; } }
 
-        public string requestADish(int id)
+        public DataTable getARegister(int id)
         {
-            return @"SELECT * FROM Dish WHERE ID_Dish=" + id;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Dish WHERE ID_Dish=" + id + ";";
+            return connectionService.consult(queryString);
         }
 
-        public string requestAllDishes()
+        public DataTable getAllRegisters()
         {
-            return @"SELECT * FROM Dish";
-        }
-
-        public string readCommandString()
-        {
-            return commandString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Dish";
+            return connectionService.consult(queryString);
         }
     }
 }

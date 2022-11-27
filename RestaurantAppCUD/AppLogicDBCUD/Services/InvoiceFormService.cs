@@ -10,20 +10,9 @@ namespace AppLogicDBCUD.Services
     {
         public static string getLastClientOrderId()
         {
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
             ClientOrder objClientOrder = new ClientOrder();
 
-            string queryStringClientOrder;
-
-            objClientOrder.getLastRegister();
-            queryStringClientOrder = objClientOrder.readCommandString();
-            objConnection.setSentence(queryStringClientOrder);
-
-            DataSet myDataLastClient;
-            myDataLastClient = new DataSet();
-            myDataLastClient = objConnection.Request();
-
-            DataTable firstTableLastClient = myDataLastClient.Tables[0];
+            DataTable firstTableLastClient = objClientOrder.getLastRegister();
 
             string lastClientOrderId = "";
 
@@ -37,18 +26,13 @@ namespace AppLogicDBCUD.Services
 
         public static void registerClientOrderDishes(DataRowCollection dishesSelected)
         {
-            Connection objConnection = new Connection();
             ClientOrder_Dish objClientOrderDish = new ClientOrder_Dish();
-
-            string queryStringClientOrderDish;
 
             foreach (DataRow dishRow in dishesSelected)
             {
-                objClientOrderDish.idClientOrder = Int32.Parse(InvoiceFormService.getLastClientOrderId());
-                objClientOrderDish.idDish = Int32.Parse(dishRow["ID_Dish"].ToString());
-                queryStringClientOrderDish = objClientOrderDish.registerDish();
-                objConnection.setSentence(queryStringClientOrderDish);
-                objConnection.runSentence();
+                objClientOrderDish.IdClientOrder = Int32.Parse(InvoiceFormService.getLastClientOrderId());
+                objClientOrderDish.IdDish = Int32.Parse(dishRow["ID_Dish"].ToString());
+                objClientOrderDish.insert();
             }
         }
 

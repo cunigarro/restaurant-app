@@ -1,30 +1,32 @@
-﻿namespace AppLogicDBCUD.Models
+﻿using AppLogicDBCUD.Services;
+using System.Data;
+using System.Net;
+using System.Xml.Linq;
+
+namespace AppLogicDBCUD.Models
 {
     public class ClientOrder
     {
-        public int idClient { get; set; }
-        public string date { get; set; }
-        public int total { get; set; }
+        private int idClient;
 
-        private string commandString;
+        private string date;
+        
+        private int total;
+        public int IdClient { get { return idClient; } set { idClient = value; } }
+        public string Date { get { return date; } set { date = value; } }
+        public int Total { get { return total; } set { total = value; } }
 
-        public void addClientOrder()
+        public void insert()
         {
-            string queryString;
-            queryString = @"INSERT INTO ClientOrder(ID_Client, Date, Total) VALUES(" + idClient + ", '" + date + "', " + total + ")";
-            commandString = queryString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"INSERT INTO ClientOrder(ID_Client, Date, Total) VALUES(" + IdClient + ", '" + Date + "', " + Total + ")";
         }
 
-        public void getLastRegister()
+        public DataTable getLastRegister()
         {
-            string queryString;
-            queryString = @"SELECT TOP 1 * FROM ClientOrder ORDER BY ID_ClientOrder DESC;";
-            commandString = queryString;
-        }
-
-        public string readCommandString()
-        {
-            return commandString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT TOP 1 * FROM ClientOrder ORDER BY ID_ClientOrder DESC;";
+            return connectionService.consult(queryString);
         }
     }
 }

@@ -56,9 +56,9 @@ namespace RestaurantAppCUD
         {
             ClientOrder objClientOrder = new ClientOrder();
 
-            objClientOrder.idClient = Int32.Parse(ClientFormService.getLastClientId());
-            objClientOrder.date = DateTime.Now.ToString("M-d-yyyy");
-            objClientOrder.total = Int32.Parse(label3.Text);
+            objClientOrder.IdClient = Int32.Parse(ClientFormService.getLastClientId());
+            objClientOrder.Date = DateTime.Now.ToString("M-d-yyyy");
+            objClientOrder.Total = Int32.Parse(label3.Text);
 
             MenuFormService.registerOrder(objClientOrder);
 

@@ -1,13 +1,22 @@
-﻿namespace AppLogicDBCUD.Models
+﻿using AppLogicDBCUD.Services;
+using System.Net;
+using System.Xml.Linq;
+
+namespace AppLogicDBCUD.Models
 {
     public class ClientOrder_Dish
     {
-        public int idClientOrder { get; set; }
-        public int idDish { get; set; }
+        private int idClientOrder;
 
-        public string registerDish()
+        private int idDish;
+        public int IdClientOrder { get { return idClientOrder; } set { idClientOrder = value; } }
+        public int IdDish { get { return idDish; } set { idDish = value; } }
+
+        public void insert()
         {
-            return @"INSERT INTO ClientOrder_Dish(ID_ClientOrder, ID_Dish) VALUES(" + idClientOrder + ", " + idDish + ");";
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"INSERT INTO ClientOrder_Dish(ID_ClientOrder, ID_Dish) VALUES(" + IdClientOrder + ", " + IdDish + ");";
+            connectionService.runCommand(queryString);
         }
     }
 }

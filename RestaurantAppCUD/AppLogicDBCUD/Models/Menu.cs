@@ -1,29 +1,29 @@
-﻿using System.Data;
+﻿using AppLogicDBCUD.Services;
+using System.Data;
+using System.Net;
 
 namespace AppLogicDBCUD.Models
 {
     public class Menu
     {
-        public string name { get; set; }
-        public string description { get; set; }
+        private string name;
 
-        private string commandString;
+        private string description;
+        public string Name { get { return name; } set { name = value; } }
+        public string Description { get { return description; } set { description = value; } } 
 
-        public static DataTable selectedItems { get; set; }
-
-        public string requestAMenu(int id)
+        public DataTable getARegister(int id)
         {
-            return @"SELECT * FROM Menu WHERE ID_Menu=" + id;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Menu WHERE ID_Menu=" + id;
+            return connectionService.consult(queryString);
         }
 
-        public string requestAllMenus()
+        public DataTable getAllRegisters()
         {
-            return @"SELECT * FROM Menu";
-        }
-
-        public string readCommandString()
-        {
-            return commandString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Menu";
+            return connectionService.consult(queryString);
         }
     }
 }

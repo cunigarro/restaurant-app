@@ -1,40 +1,48 @@
-﻿namespace AppLogicDBCUD.Models
+﻿using AppLogicDBCUD.Services;
+using System.Data;
+
+namespace AppLogicDBCUD.Models
 {
     public class Client
     {
-        public string name { get; set; }
-        public string lastName { get; set; }
-        public int age { get; set; }
-        public int dni { get; set; }
-        public string address { get; set; }
-        public string email { get; set; }
+        private string name;
 
-        private string commandString;
+        private string lastName;
+        
+        private int age;
+        
+        private int dni;
+        
+        private string address;
+        
+        private string email;
+        public string Name { get { return name; } set { name = value; } }
+        public string LastName { get { return lastName; } set { lastName = value; } }   
+        public int Age { get { return age; } set { age = value; } }
+        public int Dni { get { return dni; } set { dni = value; } }
+        public string Address { get { return address; } set { address = value; } }  
+        public string Email { get { return email; } set { email = value; } }
 
-        public void addClient()
+        public void insert()
         {
-            string queryString;
-            queryString = @"INSERT INTO Client(Name, LastName, Age, DNI, Address, Email) VALUES('" + name + "', '" + lastName + "', " + age + ", " + dni + ", '" + address + "', '" + email + "')";
-            commandString = queryString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"INSERT INTO Client(Name, LastName, Age, DNI, Address, Email) VALUES('" + Name + "', '" + LastName + "', " + Age + ", " + Dni + ", '" + Address + "', '" + Email + "')";
+            connectionService.runCommand(queryString);
         }
 
-        public void requestAClient(int id)
+        public DataTable getARegister(int id)
         {
-            string queryString;
-            queryString = @"SELECT * FROM Client WHERE ID_Client = " + id + ";";
-            commandString = queryString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM Client WHERE ID_Client = " + id + ";";
+            return connectionService.consult(queryString);
         }
 
-        public void getLastRegister()
+        public DataTable getLastRegister()
         {
-            string queryString;
-            queryString = @"SELECT TOP 1 * FROM Client ORDER BY ID_Client DESC;";
-            commandString = queryString;
-        }
 
-        public string readCommandString()
-        {
-            return commandString;
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT TOP 1 * FROM Client ORDER BY ID_Client DESC;";
+            return connectionService.consult(queryString);
         }
     }
 }
