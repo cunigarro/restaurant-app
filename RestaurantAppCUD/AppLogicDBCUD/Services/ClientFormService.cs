@@ -1,7 +1,7 @@
 ﻿using AppLogicDBCUD.Models;
 using System.Data;
 
-namespace AppLogicDBCUD.Controllers
+namespace AppLogicDBCUD.Services
 {
     public class ClientFormService
     {

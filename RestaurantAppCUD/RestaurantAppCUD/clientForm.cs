@@ -1,4 +1,4 @@
-using AppLogicDBCUD.Controllers;
+using AppLogicDBCUD.Services;
 using AppLogicDBCUD.Models;
 
 namespace RestaurantAppCUD

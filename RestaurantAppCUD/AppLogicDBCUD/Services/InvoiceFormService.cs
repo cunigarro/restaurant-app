@@ -4,7 +4,7 @@ using Syncfusion.Pdf;
 using PointF = Syncfusion.Drawing.PointF;
 using Syncfusion.Pdf.Grid;
 
-namespace AppLogicDBCUD.Controllers
+namespace AppLogicDBCUD.Services
 {
     public class InvoiceFormService
     {

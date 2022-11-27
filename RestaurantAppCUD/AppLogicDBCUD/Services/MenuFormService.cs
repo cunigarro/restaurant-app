@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text;
 
-namespace AppLogicDBCUD.Controllers
+namespace AppLogicDBCUD.Services
 {
     public class MenuFormService
     {
