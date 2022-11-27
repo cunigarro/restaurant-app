@@ -20,6 +20,7 @@ namespace AppLogicDBCUD.Models
         {
             ConnectionService connectionService = new ConnectionService();
             string queryString = @"INSERT INTO ClientOrder(ID_Client, Date, Total) VALUES(" + IdClient + ", '" + Date + "', " + Total + ")";
+            connectionService.runCommand(queryString);
         }
 
         public DataTable getLastRegister()
