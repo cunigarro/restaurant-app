@@ -12,6 +12,11 @@ namespace AppLogicDBCUD.Controllers
 {
     public class MenuFormService
     {
+        public MenuFormService()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
+
         static public Int32 calculateCost(List<Int32> valuesSelected)
         {
             Int32 total = 0;

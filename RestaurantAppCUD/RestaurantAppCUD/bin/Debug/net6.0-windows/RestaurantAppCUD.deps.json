@@ -10,7 +10,6 @@
         "dependencies": {
           "AeroWizard": "2.3.1",
           "AppLogicDBCUD": "1.0.0",
-          "Syncfusion.Pdf.Net.Core": "20.3.0.56",
           "System.Data.OleDb": "6.0.0"
         },
         "runtime": {
@@ -53,32 +52,32 @@
       },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.Win32.SystemEvents/6.0.0": {},
-      "Syncfusion.Compression.Net.Core/20.3.0.56": {
+      "Syncfusion.Compression.Net.Core/20.3.0.58": {
         "runtime": {
           "lib/net6.0/Syncfusion.Compression.Portable.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.3600.0.58",
+            "fileVersion": "20.3600.0.58"
           }
         }
       },
-      "Syncfusion.Licensing/20.3.0.56": {
+      "Syncfusion.Licensing/20.3.0.58": {
         "runtime": {
           "lib/net6.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "20.3.0.56",
-            "fileVersion": "20.3.0.56"
+            "assemblyVersion": "20.3.0.58",
+            "fileVersion": "20.3.0.58"
           }
         }
       },
-      "Syncfusion.Pdf.Net.Core/20.3.0.56": {
+      "Syncfusion.Pdf.Net.Core/20.3.0.58": {
         "dependencies": {
-          "Syncfusion.Compression.Net.Core": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56",
+          "Syncfusion.Compression.Net.Core": "20.3.0.58",
+          "Syncfusion.Licensing": "20.3.0.58",
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Pdf.Portable.dll": {
-            "assemblyVersion": "20.3600.0.56",
-            "fileVersion": "20.3600.0.56"
+            "assemblyVersion": "20.3600.0.58",
+            "fileVersion": "20.3600.0.58"
           }
         }
       },
@@ -138,6 +137,7 @@
       },
       "AppLogicDBCUD/1.0.0": {
         "dependencies": {
+          "Syncfusion.Pdf.Net.Core": "20.3.0.58",
           "System.Data.OleDb": "6.0.0"
         },
         "runtime": {
@@ -173,26 +173,26 @@
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
     },
-    "Syncfusion.Compression.Net.Core/20.3.0.56": {
+    "Syncfusion.Compression.Net.Core/20.3.0.58": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9iMA5AFoHAQi1hxkriiy50R1682ebaKSjVDWdBj6lGKQoMenOXEVMpetH8dUTihPto3BOGdGRcPphKyLJjiDgA==",
-      "path": "syncfusion.compression.net.core/20.3.0.56",
-      "hashPath": "syncfusion.compression.net.core.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-eZCJIw/hTjmzVQC871ebKJHxpyzuWaw75Wh8OaTFXx0CrtECLndObJOmyaT7i/TtVumt/KKe75YVFSefBfDb2Q==",
+      "path": "syncfusion.compression.net.core/20.3.0.58",
+      "hashPath": "syncfusion.compression.net.core.20.3.0.58.nupkg.sha512"
     },
-    "Syncfusion.Licensing/20.3.0.56": {
+    "Syncfusion.Licensing/20.3.0.58": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tSym/jpNruSOuvDjheCP8dFjBSjKkfcBSvOU6NgTIHma2r597WrJGK94KXxKPX10YVMtirhlw8WO2DOF+G4Z/A==",
-      "path": "syncfusion.licensing/20.3.0.56",
-      "hashPath": "syncfusion.licensing.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-LiNrQtlfLDVBGPsEuz4tgHR0JnEoUoh/4FdUEM7Txw56C3E241svZZ54VEGamS12OxKiMxPIBvd1ZULym4KcRw==",
+      "path": "syncfusion.licensing/20.3.0.58",
+      "hashPath": "syncfusion.licensing.20.3.0.58.nupkg.sha512"
     },
-    "Syncfusion.Pdf.Net.Core/20.3.0.56": {
+    "Syncfusion.Pdf.Net.Core/20.3.0.58": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yUzJMdht5sdYr5rA+I9K4oMtWf0YzWj5J6UOHyJuOtJoIpI3R7/MyYamvuzWIyORNzudRda+N6KgxWNu/xwgJg==",
-      "path": "syncfusion.pdf.net.core/20.3.0.56",
-      "hashPath": "syncfusion.pdf.net.core.20.3.0.56.nupkg.sha512"
+      "sha512": "sha512-/15J1Z3fa9QcWRbgxgq6pbpgRH21y9pLX1TIl3XGQX/eitVqjTtCpWmjH5r+A2G0Zi7JmIJN1XN1n8vsZ5PTug==",
+      "path": "syncfusion.pdf.net.core/20.3.0.58",
+      "hashPath": "syncfusion.pdf.net.core.20.3.0.58.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.0": {
       "type": "package",

@@ -75,7 +75,7 @@
           }
         }
       },
-      "Syncfusion.Compression.Net.Core/20.3.0.56": {
+      "Syncfusion.Compression.Net.Core/20.3.0.58": {
         "type": "package",
         "compile": {
           "lib/net6.0/Syncfusion.Compression.Portable.dll": {
@@ -88,7 +88,7 @@
           }
         }
       },
-      "Syncfusion.Licensing/20.3.0.56": {
+      "Syncfusion.Licensing/20.3.0.58": {
         "type": "package",
         "compile": {
           "lib/net6.0/Syncfusion.Licensing.dll": {}
@@ -97,11 +97,11 @@
           "lib/net6.0/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Pdf.Net.Core/20.3.0.56": {
+      "Syncfusion.Pdf.Net.Core/20.3.0.58": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Compression.Net.Core": "20.3.0.56",
-          "Syncfusion.Licensing": "20.3.0.56",
+          "Syncfusion.Compression.Net.Core": "20.3.0.58",
+          "Syncfusion.Licensing": "20.3.0.58",
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
@@ -325,6 +325,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Syncfusion.Pdf.Net.Core": "20.3.0.58",
           "System.Data.OleDb": "6.0.0"
         },
         "compile": {
@@ -455,10 +456,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Syncfusion.Compression.Net.Core/20.3.0.56": {
-      "sha512": "9iMA5AFoHAQi1hxkriiy50R1682ebaKSjVDWdBj6lGKQoMenOXEVMpetH8dUTihPto3BOGdGRcPphKyLJjiDgA==",
+    "Syncfusion.Compression.Net.Core/20.3.0.58": {
+      "sha512": "eZCJIw/hTjmzVQC871ebKJHxpyzuWaw75Wh8OaTFXx0CrtECLndObJOmyaT7i/TtVumt/KKe75YVFSefBfDb2Q==",
       "type": "package",
-      "path": "syncfusion.compression.net.core/20.3.0.56",
+      "path": "syncfusion.compression.net.core/20.3.0.58",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -471,15 +472,15 @@
         "lib/netstandard1.4/Syncfusion.Compression.Portable.xml",
         "lib/netstandard2.0/Syncfusion.Compression.Portable.dll",
         "lib/netstandard2.0/Syncfusion.Compression.Portable.xml",
-        "syncfusion.compression.net.core.20.3.0.56.nupkg.sha512",
+        "syncfusion.compression.net.core.20.3.0.58.nupkg.sha512",
         "syncfusion.compression.net.core.nuspec",
         "syncfusion_logo.png"
       ]
     },
-    "Syncfusion.Licensing/20.3.0.56": {
-      "sha512": "tSym/jpNruSOuvDjheCP8dFjBSjKkfcBSvOU6NgTIHma2r597WrJGK94KXxKPX10YVMtirhlw8WO2DOF+G4Z/A==",
+    "Syncfusion.Licensing/20.3.0.58": {
+      "sha512": "LiNrQtlfLDVBGPsEuz4tgHR0JnEoUoh/4FdUEM7Txw56C3E241svZZ54VEGamS12OxKiMxPIBvd1ZULym4KcRw==",
       "type": "package",
-      "path": "syncfusion.licensing/20.3.0.56",
+      "path": "syncfusion.licensing/20.3.0.58",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -503,15 +504,15 @@
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.20.3.0.56.nupkg.sha512",
+        "syncfusion.licensing.20.3.0.58.nupkg.sha512",
         "syncfusion.licensing.nuspec",
         "syncfusion_logo.png"
       ]
     },
-    "Syncfusion.Pdf.Net.Core/20.3.0.56": {
-      "sha512": "yUzJMdht5sdYr5rA+I9K4oMtWf0YzWj5J6UOHyJuOtJoIpI3R7/MyYamvuzWIyORNzudRda+N6KgxWNu/xwgJg==",
+    "Syncfusion.Pdf.Net.Core/20.3.0.58": {
+      "sha512": "/15J1Z3fa9QcWRbgxgq6pbpgRH21y9pLX1TIl3XGQX/eitVqjTtCpWmjH5r+A2G0Zi7JmIJN1XN1n8vsZ5PTug==",
       "type": "package",
-      "path": "syncfusion.pdf.net.core/20.3.0.56",
+      "path": "syncfusion.pdf.net.core/20.3.0.58",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -525,7 +526,7 @@
         "lib/netstandard1.4/Syncfusion.Pdf.Portable.xml",
         "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll",
         "lib/netstandard2.0/Syncfusion.Pdf.Portable.xml",
-        "syncfusion.pdf.net.core.20.3.0.56.nupkg.sha512",
+        "syncfusion.pdf.net.core.20.3.0.58.nupkg.sha512",
         "syncfusion.pdf.net.core.nuspec",
         "syncfusion_logo.png"
       ]
@@ -826,7 +827,6 @@
     "net6.0-windows7.0": [
       "AeroWizard >= 2.3.1",
       "AppLogicDBCUD >= 1.0.0",
-      "Syncfusion.Pdf.Net.Core >= 20.3.0.56",
       "System.Data.OleDb >= 6.0.0"
     ]
   },
@@ -876,10 +876,6 @@
           "AeroWizard": {
             "target": "Package",
             "version": "[2.3.1, )"
-          },
-          "Syncfusion.Pdf.Net.Core": {
-            "target": "Package",
-            "version": "[20.3.0.56, )"
           },
           "System.Data.OleDb": {
             "target": "Package",

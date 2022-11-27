@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "AppLogicDBCUD/1.0.0": {
         "dependencies": {
+          "Syncfusion.Pdf.Net.Core": "20.3.0.58",
           "System.Data.OleDb": "6.0.0"
         },
         "runtime": {
           "AppLogicDBCUD.dll": {}
         }
       },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "runtime": {
           "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
@@ -27,6 +29,35 @@
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Syncfusion.Compression.Net.Core/20.3.0.58": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "20.3600.0.58",
+            "fileVersion": "20.3600.0.58"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.3.0.58": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.3.0.58",
+            "fileVersion": "20.3.0.58"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/20.3.0.58": {
+        "dependencies": {
+          "Syncfusion.Compression.Net.Core": "20.3.0.58",
+          "Syncfusion.Licensing": "20.3.0.58",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "20.3600.0.58",
+            "fileVersion": "20.3600.0.58"
           }
         }
       },
@@ -135,6 +166,11 @@
           }
         }
       },
+      "System.Text.Encoding.CodePages/4.4.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
       "System.Windows.Extensions/6.0.0": {
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
@@ -162,12 +198,40 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eZCJIw/hTjmzVQC871ebKJHxpyzuWaw75Wh8OaTFXx0CrtECLndObJOmyaT7i/TtVumt/KKe75YVFSefBfDb2Q==",
+      "path": "syncfusion.compression.net.core/20.3.0.58",
+      "hashPath": "syncfusion.compression.net.core.20.3.0.58.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LiNrQtlfLDVBGPsEuz4tgHR0JnEoUoh/4FdUEM7Txw56C3E241svZZ54VEGamS12OxKiMxPIBvd1ZULym4KcRw==",
+      "path": "syncfusion.licensing/20.3.0.58",
+      "hashPath": "syncfusion.licensing.20.3.0.58.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/15J1Z3fa9QcWRbgxgq6pbpgRH21y9pLX1TIl3XGQX/eitVqjTtCpWmjH5r+A2G0Zi7JmIJN1XN1n8vsZ5PTug==",
+      "path": "syncfusion.pdf.net.core/20.3.0.58",
+      "hashPath": "syncfusion.pdf.net.core.20.3.0.58.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.0": {
       "type": "package",
@@ -217,6 +281,13 @@
       "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
       "path": "system.security.permissions/6.0.0",
       "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6JX7ZdaceBiLKLkYt8zJcp4xTJd1uYyXXEkPw6mnlUIjh1gZPIVKPtRXPmY5kLf6DwZmf5YLwR3QUrRonl7l0A==",
+      "path": "system.text.encoding.codepages/4.4.0",
+      "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     },
     "System.Windows.Extensions/6.0.0": {
       "type": "package",

@@ -42,7 +42,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Pagar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Click += new System.EventHandler(this.payOrder);
             // 
             // dataGridView1
             // 
@@ -72,7 +72,7 @@
             this.Controls.Add(this.button2);
             this.Name = "invoiceForm";
             this.Text = "Recibo de pago";
-            this.Load += new System.EventHandler(this.invoiceForm_Load);
+            this.Load += new System.EventHandler(this.loadInvoice);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
