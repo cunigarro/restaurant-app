@@ -28,16 +28,6 @@ namespace RestaurantAppCUD
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
-        public static Stream GenerateStreamFromString(string s)
-        {
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
-            writer.Write(s);
-            writer.Flush();
-            stream.Position = 0;
-            return stream;
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             Connection objConnection = new Connection();

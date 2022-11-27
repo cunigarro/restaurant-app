@@ -18,7 +18,7 @@ namespace AppLogicDBCUD.Models
             return @"SELECT * FROM Dish WHERE ID_Dish=" + id;
         }
 
-        public string requestAlDishes()
+        public string requestAllDishes()
         {
             return @"SELECT * FROM Dish";
         }

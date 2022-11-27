@@ -1,4 +1,5 @@
-﻿using AppLogicDBCUD.Models;
+﻿using AppLogicDBCUD.Controllers;
+using AppLogicDBCUD.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,69 +33,18 @@ namespace RestaurantAppCUD
 
         public void setMenuInformation()
         {
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            Menu objMenu = new Menu();
-
-            string queryString;
-
-            queryString = objMenu.requestAllMenus();
-            objConnection.setSentence(queryString);
-
-            DataSet myDataSet;
-            myDataSet = new DataSet();
-            myDataSet = objConnection.Request();
-
-            DataTable firstTable = myDataSet.Tables[0];
+            DataTable firstTable = MenuFormService.getAllMenus();
 
             comboBox1.DataSource = firstTable;
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "ID_Menu";
         }
 
-        private List<Int32> getDishesWithMenuId(int currentMenu)
-        {
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            Menu_Dish objMenuDish = new Menu_Dish();
-
-            string queryDishesWithMenuId;
-
-            objMenuDish.getDishWithMenuId(currentMenu);
-            queryDishesWithMenuId = objMenuDish.readCommandString();
-            objConnection.setSentence(queryDishesWithMenuId);
-
-            DataSet dishesIdDataSet;
-            dishesIdDataSet = new DataSet();
-            dishesIdDataSet = objConnection.Request();
-
-            DataTable dishesIdTable = dishesIdDataSet.Tables[0];
-            List<Int32> dishesIdList = new List<Int32>();
-
-            foreach (DataRow row in dishesIdTable.Rows)
-            {
-                Int32 dishId = Int32.Parse(row["ID_Dish"].ToString());
-                dishesIdList.Add(dishId);
-            }
-
-            return dishesIdList;
-        }
-
         private void setNamePriceInCheckedList(Int32 currentMenu)
         {
-            List<Int32> dishesIdList = getDishesWithMenuId(currentMenu);
+            List<Int32> dishesIdList = MenuFormService.getDishesWithMenuId(currentMenu);
 
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            Dish objDish = new Dish();
-
-            string queryStringDishes;
-
-            queryStringDishes = objDish.requestAlDishes();
-            objConnection.setSentence(queryStringDishes);
-
-            DataSet myDataSetDishes;
-            myDataSetDishes = new DataSet();
-            myDataSetDishes = objConnection.Request();
-
-            DataTable firstTableDishes = myDataSetDishes.Tables[0];
+            DataTable firstTableDishes = MenuFormService.getAllDishes();
 
             DataTable newDataTable = new DataTable();
 
@@ -117,64 +67,31 @@ namespace RestaurantAppCUD
             checkedListBox1.ValueMember = "Price";
         }
 
-        private string returnLastClient()
-        {
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
-            Client objClient = new Client();
-
-            string queryStringLastClient;
-            
-            objClient.getLastRegister();
-            queryStringLastClient = objClient.readCommandString();
-            objConnection.setSentence(queryStringLastClient);
-
-            DataSet myDataLastClient;
-            myDataLastClient = new DataSet();
-            myDataLastClient = objConnection.Request();
-
-            DataTable firstTableLastClient = myDataLastClient.Tables[0];
-
-            string lastClientId = "";
-
-            foreach (DataRow row in firstTableLastClient.Rows)
-            {
-                lastClientId = row["ID_Client"].ToString();
-            }
-
-            return lastClientId;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            int total = 0;
+            List<Int32> valuesSelected = new List<Int32>();
+
             foreach (object itemChecked in checkedListBox1.CheckedItems)
             {
                 var row = (itemChecked as DataRowView).Row;
-                total += Int32.Parse(row.ItemArray[4].ToString());
+                valuesSelected.Add(Int32.Parse(row.ItemArray[4].ToString()));
             }
 
-            totalInMenuForm = total;
+            totalInMenuForm = MenuFormService.calculateCost(valuesSelected);
 
-            label3.Text = total.ToString();
+            label3.Text = totalInMenuForm.ToString();
             button2.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AppLogicDBCUD.Connection objConnection = new AppLogicDBCUD.Connection();
             ClientOrder objClientOrder = new ClientOrder();
 
-            string queryString;
-
-            objClientOrder.idClient = Int32.Parse(returnLastClient());
+            objClientOrder.idClient = Int32.Parse(ClientFormService.getLastClientId());
             objClientOrder.date = DateTime.Now.ToString("M-d-yyyy");
             objClientOrder.total = Int32.Parse(label3.Text);
 
-            objClientOrder.addClientOrder();
-
-            queryString = objClientOrder.readCommandString();
-            objConnection.setSentence(queryString);
-            objConnection.runSentence();
+            MenuFormService.registerOrder(objClientOrder);
 
             DataTable dataTable = new DataTable();
 

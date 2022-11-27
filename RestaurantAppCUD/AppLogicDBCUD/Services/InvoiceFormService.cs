@@ -8,5 +8,6 @@ namespace AppLogicDBCUD.Controllers
 {
     public class InvoiceFormService
     {
+
     }
 }
