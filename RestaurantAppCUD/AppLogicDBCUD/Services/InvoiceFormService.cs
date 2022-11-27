@@ -1,26 +1,8 @@
 ﻿using AppLogicDBCUD.Models;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using Syncfusion.Drawing;
-using System.IO;
 using PointF = Syncfusion.Drawing.PointF;
 using Syncfusion.Pdf.Grid;
-using AppLogicDBCUD;
-using AppLogicDBCUD.Models;
-using AppLogicDBCUD.Controllers;
 
 namespace AppLogicDBCUD.Controllers
 {
