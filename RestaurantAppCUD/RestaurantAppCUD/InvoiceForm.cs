@@ -2,28 +2,28 @@
 
 namespace RestaurantAppCUD
 {
-    public partial class invoiceForm : Form
+    public partial class InvoiceForm : Form
     {
-        public invoiceForm()
+        public InvoiceForm()
         {
             InitializeComponent();
         }
 
         private void payOrder(object sender, EventArgs e)
         {
-            InvoiceFormService.registerClientOrderDishes(menuForm.setValueForDataGrid.Rows);
+            InvoiceFormService.registerClientOrderDishes(MenuForm.setValueForDataGrid.Rows);
 
-            string totalPayed = menuForm.totalInMenuForm.ToString();
+            string totalPayed = MenuForm.totalInMenuForm.ToString();
 
-            InvoiceFormService.generateInvoicePdf(menuForm.setValueForDataGrid, totalPayed);
+            InvoiceFormService.generateInvoicePdf(MenuForm.setValueForDataGrid, totalPayed);
 
             this.Close();
         }
 
         private void loadInvoice(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = menuForm.setValueForDataGrid;
-            total.Text = "Costo total: " + menuForm.totalInMenuForm;
+            dataGridView1.DataSource = MenuForm.setValueForDataGrid;
+            total.Text = "Costo total: " + MenuForm.totalInMenuForm;
         }
     }
 }

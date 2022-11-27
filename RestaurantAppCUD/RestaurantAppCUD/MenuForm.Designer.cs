@@ -1,6 +1,6 @@
 ﻿namespace RestaurantAppCUD
 {
-    partial class menuForm
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -102,7 +102,7 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Costo total:";
             // 
-            // menuForm
+            // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +114,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
-            this.Name = "menuForm";
+            this.Name = "MenuForm";
             this.Text = "Menú";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -4,14 +4,14 @@ using System.Data;
 
 namespace RestaurantAppCUD
 {
-    public partial class menuForm : Form
+    public partial class MenuForm : Form
     {
-        invoiceForm invoiceFormInstance = new invoiceForm();
+        InvoiceForm invoiceFormInstance = new InvoiceForm();
         public string lastClientId;
         public static DataTable setValueForDataGrid = new DataTable();
         public static int totalInMenuForm = 0;
 
-        public menuForm()
+        public MenuForm()
         {
             InitializeComponent();
             setMenuInformation();

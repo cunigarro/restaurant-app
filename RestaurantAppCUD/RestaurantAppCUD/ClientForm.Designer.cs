@@ -1,6 +1,6 @@
 ﻿namespace RestaurantAppCUD
 {
-    partial class clientForm
+    partial class ClientForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -186,7 +186,7 @@
             this.notification.Text = "                                                                                 " +
     "                             ";
             // 
-            // clientForm
+            // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +207,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "clientForm";
+            this.Name = "ClientForm";
             this.Text = "Registrese en nuestro sistema";
             this.ResumeLayout(false);
             this.PerformLayout();

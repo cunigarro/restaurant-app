@@ -1,6 +1,6 @@
 ﻿namespace RestaurantAppCUD
 {
-    partial class invoiceForm
+    partial class InvoiceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +62,7 @@
             this.total.TabIndex = 3;
             this.total.Text = "label1";
             // 
-            // invoiceForm
+            // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,7 +70,7 @@
             this.Controls.Add(this.total);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Name = "invoiceForm";
+            this.Name = "InvoiceForm";
             this.Text = "Recibo de pago";
             this.Load += new System.EventHandler(this.loadInvoice);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

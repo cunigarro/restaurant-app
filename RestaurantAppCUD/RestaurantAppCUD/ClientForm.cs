@@ -3,11 +3,11 @@ using AppLogicDBCUD.Models;
 
 namespace RestaurantAppCUD
 {
-    public partial class clientForm: Form
+    public partial class ClientForm: Form
     {
-        menuForm menuFormInstance = new menuForm();
+        MenuForm menuFormInstance = new MenuForm();
 
-        public clientForm( )
+        public ClientForm( )
         {
             InitializeComponent();
         }
