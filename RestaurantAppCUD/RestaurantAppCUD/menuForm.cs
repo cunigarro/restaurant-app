@@ -49,7 +49,7 @@ namespace RestaurantAppCUD
             checkedListBox1.ValueMember = "Price";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void calculateCost(object sender, EventArgs e)
         {
             List<Int32> valuesSelected = new List<Int32>();
 
@@ -65,7 +65,7 @@ namespace RestaurantAppCUD
             button2.Enabled = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void registerOrder(object sender, EventArgs e)
         {
             ClientOrder objClientOrder = new ClientOrder();
 
@@ -93,7 +93,7 @@ namespace RestaurantAppCUD
             invoiceFormInstance.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void selectedMenu(object sender, EventArgs e)
         {
             if(comboBox1.SelectedValue.ToString() != "System.Data.DataRowView")
             {

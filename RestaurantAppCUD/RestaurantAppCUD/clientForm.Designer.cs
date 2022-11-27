@@ -81,7 +81,7 @@
             this.nextBtn.TabIndex = 11;
             this.nextBtn.Text = "Siguiente";
             this.nextBtn.UseVisualStyleBackColor = true;
-            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            this.nextBtn.Click += new System.EventHandler(this.registerClient);
             // 
             // nameTextBox
             // 

@@ -120,7 +120,7 @@ namespace AppLogicDBCUD.Controllers
                 }
             }
 
-            return newDataTable;    
+            return newDataTable;
         }
     }
 }

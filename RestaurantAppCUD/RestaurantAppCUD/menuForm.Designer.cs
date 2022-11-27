@@ -62,7 +62,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Calcular costo";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.calculateCost);
             // 
             // button2
             // 
@@ -73,7 +73,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Registrar orden";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.registerOrder);
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(544, 23);
             this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.selectedMenu);
             // 
             // label2
             // 

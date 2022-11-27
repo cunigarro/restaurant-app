@@ -14,7 +14,7 @@ namespace RestaurantAppCUD
             InitializeComponent();
         }
 
-        private void nextBtn_Click(object sender, EventArgs e)
+        private void registerClient(object sender, EventArgs e)
         {
             try
             {
