@@ -33,7 +33,30 @@ namespace RestaurantAppTests
         [Test]
         public void RegisterClientOrderDishes()
         {
+            Dish dish = new Dish();
+            DataTable lastDish = dish.findFirstByOrderByIdDesc();
 
+            DataRowCollection dishes = lastDish.Rows;
+
+            InvoiceFormService.registerClientOrderDishes(dishes);
+
+            ClientOrder_Dish objClientOrderDish = new ClientOrder_Dish();
+
+            string dishId = "";
+
+            foreach (DataRow row in objClientOrderDish.findFirstByOrderByIdDesc().Rows)
+            {
+                dishId = row["ID_Dish"].ToString();
+            }
+
+            string expectedDishId = "";
+
+            foreach (DataRow row in dishes)
+            {
+                expectedDishId = row["ID_Dish"].ToString();
+            }
+
+            Assert.That(expectedDishId, Is.EqualTo(dishId));
         }
 
         [Test]
