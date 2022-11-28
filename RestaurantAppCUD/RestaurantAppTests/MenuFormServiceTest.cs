@@ -88,13 +88,25 @@ namespace RestaurantAppTests
         [Test]
         public void GetAllDishes()
         {
+            Dish dish = new Dish();
 
+            DataTable allDishes = dish.findAll();
+
+            DataTable expectedAllDishes = MenuFormService.getAllDishes();
+
+            Assert.That(expectedAllDishes.Rows.Count, Is.EqualTo(allDishes.Rows.Count));
         }
 
         [Test]
         public void GetAllMenus()
         {
+            Menu menu = new Menu();
 
+            DataTable allMenus = menu.findAll();
+
+            DataTable expectedAllMenus = MenuFormService.getAllMenus();
+
+            Assert.That(expectedAllMenus.Rows.Count, Is.EqualTo(allMenus.Rows.Count));
         }
 
         [Test]
