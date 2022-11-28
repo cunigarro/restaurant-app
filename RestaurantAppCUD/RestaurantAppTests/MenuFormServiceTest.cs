@@ -59,7 +59,30 @@ namespace RestaurantAppTests
         [Test]
         public void GetDishesWithMenuId()
         {
+            Menu menu = new Menu();
 
+            string lastMenuId = "";
+
+            foreach (DataRow row in menu.findFirstByOrderByIdDesc().Rows)
+            {
+                lastMenuId = row["ID_Menu"].ToString();
+            }
+
+            List<Int32> dishesIdList = MenuFormService.getDishesWithMenuId(Int32.Parse(lastMenuId));
+
+            List<Int32> expectedDishesIdList = new List<Int32>();
+
+            Menu_Dish objMenuDish = new Menu_Dish();
+
+            DataTable dishesIdTable = objMenuDish.findById(Int32.Parse(lastMenuId));
+
+            foreach (DataRow row in dishesIdTable.Rows)
+            {
+                Int32 dishId = Int32.Parse(row["ID_Dish"].ToString());
+                expectedDishesIdList.Add(dishId);
+            }
+
+            Assert.That(expectedDishesIdList.Count, Is.EqualTo(dishesIdList.Count));
         }
 
         [Test]

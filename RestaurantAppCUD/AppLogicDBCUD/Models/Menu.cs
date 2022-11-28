@@ -25,5 +25,12 @@ namespace AppLogicCUD.Models
             string queryString = @"SELECT * FROM Menu";
             return connectionService.consult(queryString);
         }
+
+        public DataTable findFirstByOrderByIdDesc()
+        {
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT TOP 1 * FROM Menu ORDER BY ID_Menu DESC;";
+            return connectionService.consult(queryString);
+        }
     }
 }
