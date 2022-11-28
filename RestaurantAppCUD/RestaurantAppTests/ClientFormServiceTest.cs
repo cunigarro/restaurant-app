@@ -24,7 +24,7 @@ namespace RestaurantAppTests
 
             int amountAfterInsert = client.findAll().Rows.Count;
 
-            Assert.That(amountAfterInsert, Is.EqualTo(amountOfItems + 1));
+            Assert.That(amountOfItems + 1, Is.EqualTo(amountAfterInsert));
 
             string lastClientId = "";
 

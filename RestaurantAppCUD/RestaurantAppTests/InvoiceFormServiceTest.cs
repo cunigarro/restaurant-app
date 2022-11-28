@@ -8,5 +8,22 @@ namespace RestaurantAppTests
 {
     internal class InvoiceFormServiceTest
     {
+        [Test]
+        public void GetLastClientOrderId()
+        {
+
+        }
+
+        [Test]
+        public void RegisterClientOrderDishes()
+        {
+
+        }
+
+        [Test]
+        public void GenerateInvoicePdf()
+        {
+
+        }
     }
 }

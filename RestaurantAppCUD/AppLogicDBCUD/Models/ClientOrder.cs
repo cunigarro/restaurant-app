@@ -23,6 +23,20 @@ namespace AppLogicCUD.Models
             connectionService.runCommand(queryString);
         }
 
+        public DataTable findAll()
+        {
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"SELECT * FROM ClientOrder;";
+            return connectionService.consult(queryString);
+        }
+
+        public void delete(int id)
+        {
+            ConnectionService connectionService = new ConnectionService();
+            string queryString = @"DELETE FROM ClientOrder WHERE ID_ClientOrder=" + id + ";";
+            connectionService.runCommand(queryString);
+        }
+
         public DataTable findFirstByOrderByIdDesc()
         {
             ConnectionService connectionService = new ConnectionService();
