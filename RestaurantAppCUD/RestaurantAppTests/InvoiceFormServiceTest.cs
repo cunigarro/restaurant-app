@@ -59,10 +59,10 @@ namespace RestaurantAppTests
             Assert.That(expectedDishId, Is.EqualTo(dishId));
         }
 
-        [Test]
+        /* [Test]
         public void GenerateInvoicePdf()
         {
 
-        }
+        } */
     }
 }
