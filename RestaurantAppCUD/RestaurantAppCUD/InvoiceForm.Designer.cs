@@ -39,7 +39,7 @@
             this.button2.Location = new System.Drawing.Point(350, 240);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Pagar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.payOrder);
@@ -51,7 +51,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(449, 183);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 1;
             // 
             // total
             // 
@@ -59,7 +59,7 @@
             this.total.Location = new System.Drawing.Point(12, 244);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(38, 15);
-            this.total.TabIndex = 3;
+            this.total.TabIndex = 0;
             this.total.Text = "label1";
             // 
             // InvoiceForm

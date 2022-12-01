@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(12, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nombre(s)";
             // 
             // label2
@@ -61,7 +61,7 @@
             this.label2.Location = new System.Drawing.Point(12, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 15);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Edad";
             // 
             // label4
@@ -70,7 +70,7 @@
             this.label4.Location = new System.Drawing.Point(12, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 15);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Dirección";
             // 
             // nextBtn
@@ -78,7 +78,7 @@
             this.nextBtn.Location = new System.Drawing.Point(451, 245);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(75, 23);
-            this.nextBtn.TabIndex = 11;
+            this.nextBtn.TabIndex = 7;
             this.nextBtn.Text = "Siguiente";
             this.nextBtn.UseVisualStyleBackColor = true;
             this.nextBtn.Click += new System.EventHandler(this.registerClient);
@@ -89,7 +89,7 @@
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(237, 23);
-            this.nameTextBox.TabIndex = 16;
+            this.nameTextBox.TabIndex = 0;
             // 
             // ageTextBox
             // 
@@ -97,7 +97,7 @@
             this.ageTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(237, 23);
-            this.ageTextBox.TabIndex = 17;
+            this.ageTextBox.TabIndex = 3;
             // 
             // label5
             // 
@@ -113,7 +113,7 @@
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(237, 23);
-            this.lastNameTextBox.TabIndex = 20;
+            this.lastNameTextBox.TabIndex = 2;
             // 
             // label6
             // 
@@ -121,7 +121,7 @@
             this.label6.Location = new System.Drawing.Point(289, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 15);
-            this.label6.TabIndex = 19;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Apellidos";
             // 
             // dniTextBox
@@ -130,7 +130,7 @@
             this.dniTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dniTextBox.Name = "dniTextBox";
             this.dniTextBox.Size = new System.Drawing.Size(237, 23);
-            this.dniTextBox.TabIndex = 21;
+            this.dniTextBox.TabIndex = 4;
             // 
             // label7
             // 
@@ -138,7 +138,7 @@
             this.label7.Location = new System.Drawing.Point(289, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
-            this.label7.TabIndex = 22;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Documento";
             // 
             // addressTextBox
@@ -147,7 +147,7 @@
             this.addressTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(237, 23);
-            this.addressTextBox.TabIndex = 23;
+            this.addressTextBox.TabIndex = 5;
             // 
             // emailTextBox
             // 
@@ -155,7 +155,7 @@
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(237, 23);
-            this.emailTextBox.TabIndex = 24;
+            this.emailTextBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -163,7 +163,7 @@
             this.label3.Location = new System.Drawing.Point(289, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 15);
-            this.label3.TabIndex = 25;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Correo";
             // 
             // label8
