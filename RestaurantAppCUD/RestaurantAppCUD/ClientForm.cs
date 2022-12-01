@@ -1,5 +1,6 @@
 using AppLogicCUD.Services;
 using AppLogicCUD.Models;
+using System.Linq.Expressions;
 
 namespace RestaurantAppCUD
 {
@@ -38,17 +39,41 @@ namespace RestaurantAppCUD
             }
         }
 
-        private void validateNameTextBox(object sender, System.ComponentModel.CancelEventArgs e)
+        private void validateTextBox(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(nameTextBox.Text))
+            TextBox textBox = sender as TextBox;
+
+            if (string.IsNullOrEmpty(textBox.Text))
             {
                 e.Cancel = true;
                 nameTextBox.Focus();
-                errorProvider.SetError(nameTextBox, "Por favor introduzca su nombre");
-            } else
+                errorProvider.SetError(textBox, this.validationTexts(textBox.Name));
+            }
+            else
             {
-                e.Cancel = true;
-                errorProvider.SetError(nameTextBox, null);
+                e.Cancel = false;
+                errorProvider.SetError(textBox, null);
+            }
+        }
+
+        private string validationTexts(string textBoxRef)
+        {
+            switch (textBoxRef)
+            {
+                case "nameTextBox":
+                    return "Por favor introduzca sus nombres";
+                case "lastNameTextBox":
+                    return "Por favor introduzca sus apellidos";
+                case "ageTextBox":
+                    return "Por favor introduzca su edad";
+                case "dniTextBox":
+                    return "Por favor introduzca su número de documento";
+                case "addressTextBox":
+                    return "Por favor introduzca su dirección";
+                case "emailTextBox":
+                    return "Por favor introduzca su correo electrónico";
+                default:
+                    return "Por favor introduzca un valor";
             }
         }
     }

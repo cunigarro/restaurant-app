@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 60);
+            this.label1.Location = new System.Drawing.Point(25, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 121);
+            this.label2.Location = new System.Drawing.Point(25, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 15);
             this.label2.TabIndex = 0;
@@ -70,7 +70,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 180);
+            this.label4.Location = new System.Drawing.Point(25, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 15);
             this.label4.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(451, 245);
+            this.nextBtn.Location = new System.Drawing.Point(464, 246);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(75, 23);
             this.nextBtn.TabIndex = 7;
@@ -88,20 +88,21 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(12, 78);
+            this.nameTextBox.Location = new System.Drawing.Point(25, 79);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(237, 23);
             this.nameTextBox.TabIndex = 0;
-            this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateNameTextBox);
+            this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // ageTextBox
             // 
-            this.ageTextBox.Location = new System.Drawing.Point(12, 137);
+            this.ageTextBox.Location = new System.Drawing.Point(25, 138);
             this.ageTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(237, 23);
             this.ageTextBox.TabIndex = 3;
+            this.ageTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // label5
             // 
@@ -113,16 +114,17 @@
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(289, 78);
+            this.lastNameTextBox.Location = new System.Drawing.Point(302, 79);
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(237, 23);
             this.lastNameTextBox.TabIndex = 2;
+            this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(289, 60);
+            this.label6.Location = new System.Drawing.Point(302, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 15);
             this.label6.TabIndex = 0;
@@ -130,16 +132,17 @@
             // 
             // dniTextBox
             // 
-            this.dniTextBox.Location = new System.Drawing.Point(289, 137);
+            this.dniTextBox.Location = new System.Drawing.Point(302, 138);
             this.dniTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dniTextBox.Name = "dniTextBox";
             this.dniTextBox.Size = new System.Drawing.Size(237, 23);
             this.dniTextBox.TabIndex = 4;
+            this.dniTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(289, 121);
+            this.label7.Location = new System.Drawing.Point(302, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
             this.label7.TabIndex = 0;
@@ -147,24 +150,26 @@
             // 
             // addressTextBox
             // 
-            this.addressTextBox.Location = new System.Drawing.Point(12, 196);
+            this.addressTextBox.Location = new System.Drawing.Point(25, 197);
             this.addressTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(237, 23);
             this.addressTextBox.TabIndex = 5;
+            this.addressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(289, 196);
+            this.emailTextBox.Location = new System.Drawing.Point(302, 197);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(237, 23);
             this.emailTextBox.TabIndex = 6;
+            this.emailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateTextBox);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 180);
+            this.label3.Location = new System.Drawing.Point(302, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 0;
@@ -174,7 +179,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(12, 21);
+            this.label8.Location = new System.Drawing.Point(25, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(182, 15);
             this.label8.TabIndex = 26;
@@ -198,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 289);
+            this.ClientSize = new System.Drawing.Size(565, 289);
             this.Controls.Add(this.notification);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
