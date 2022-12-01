@@ -37,5 +37,19 @@ namespace RestaurantAppCUD
                 notification.Text = "Error: " + ex.Message;
             }
         }
+
+        private void validateNameTextBox(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(nameTextBox.Text))
+            {
+                e.Cancel = true;
+                nameTextBox.Focus();
+                errorProvider.SetError(nameTextBox, "Por favor introduzca su nombre");
+            } else
+            {
+                e.Cancel = true;
+                errorProvider.SetError(nameTextBox, null);
+            }
+        }
     }
 }

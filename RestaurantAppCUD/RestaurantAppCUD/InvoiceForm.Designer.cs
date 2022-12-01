@@ -71,6 +71,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Name = "InvoiceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recibo de pago";
             this.Load += new System.EventHandler(this.loadInvoice);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
