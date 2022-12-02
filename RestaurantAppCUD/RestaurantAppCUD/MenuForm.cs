@@ -1,6 +1,8 @@
 ﻿using AppLogicCUD.Services;
 using AppLogicCUD.Models;
 using System.Data;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RestaurantAppCUD
 {
@@ -22,25 +24,25 @@ namespace RestaurantAppCUD
         {
             DataTable firstTable = MenuFormService.getAllMenus();
 
-            comboBox1.DataSource = firstTable;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "ID_Menu";
+            menuComboBox.DataSource = firstTable;
+            menuComboBox.DisplayMember = "Name";
+            menuComboBox.ValueMember = "ID_Menu";
         }
 
         private void setNamePriceInCheckedList(Int32 currentMenu)
         {
             DataTable newDataTable = MenuFormService.getDishesWithPrice(currentMenu);
 
-            checkedListBox1.DataSource = newDataTable;
-            checkedListBox1.DisplayMember = "Name_Price";
-            checkedListBox1.ValueMember = "Price";
+            dishesCheckedListBox.DataSource = newDataTable;
+            dishesCheckedListBox.DisplayMember = "Name_Price";
+            dishesCheckedListBox.ValueMember = "Price";
         }
 
         private void calculateCost(object sender, EventArgs e)
         {
             List<Int32> valuesSelected = new List<Int32>();
 
-            foreach (object itemChecked in checkedListBox1.CheckedItems)
+            foreach (object itemChecked in dishesCheckedListBox.CheckedItems)
             {
                 var row = (itemChecked as DataRowView).Row;
                 valuesSelected.Add(Int32.Parse(row.ItemArray[4].ToString()));
@@ -69,7 +71,7 @@ namespace RestaurantAppCUD
             dataTable.Columns.Add("Description", typeof(string));
             dataTable.Columns.Add("Price", typeof(string));
 
-            foreach (DataRowView row in checkedListBox1.CheckedItems)
+            foreach (DataRowView row in dishesCheckedListBox.CheckedItems)
             {
                 dataTable.ImportRow(row.Row);
             }
@@ -82,10 +84,45 @@ namespace RestaurantAppCUD
 
         private void selectedMenu(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedValue.ToString() != "System.Data.DataRowView")
+            if(menuComboBox.SelectedValue.ToString() != "System.Data.DataRowView")
             {
-                string value = comboBox1.SelectedValue.ToString();
+                string value = menuComboBox.SelectedValue.ToString();
                 setNamePriceInCheckedList(Int32.Parse(value));
+            }
+        }
+
+        private void fieldsValidation(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var fieldBox = sender;
+
+            if(fieldBox.GetType().BaseType.Name == "ListBox")
+            {
+                CheckedListBox checkedListBox = fieldBox as CheckedListBox;
+
+                if (checkedListBox.Name == "dishesCheckedListBox" & checkedListBox.CheckedItems.Count <= 0) {
+                    e.Cancel = true;
+                    checkedListBox.Focus();
+                    errorProvider.SetError(checkedListBox, "Selecciona un plato");
+                } else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(checkedListBox, null);
+                }
+            } else if (fieldBox.GetType().BaseType.Name == "ListControl")
+            {
+                System.Windows.Forms.ComboBox comboBox = fieldBox as System.Windows.Forms.ComboBox;
+
+                if (comboBox.Name == "menuComboBox" & comboBox.SelectedValue == "")
+                {
+                    e.Cancel = true;
+                    comboBox.Focus();
+                    errorProvider.SetError(comboBox, "Selecciona un men{u");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(comboBox, null);
+                }
             }
         }
     }
