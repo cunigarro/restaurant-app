@@ -47,7 +47,13 @@ namespace RestaurantAppCUD
             {
                 e.Cancel = true;
                 nameTextBox.Focus();
-                errorProvider.SetError(textBox, this.validationTexts(textBox.Name));
+                errorProvider.SetError(textBox, this.validationTextForRequired(textBox.Name));
+            }
+            else if ((textBox.Name == "ageTextBox" | textBox.Name == "dniTextBox") & !int.TryParse(textBox.Text, out int result))
+            {
+                e.Cancel = true;
+                nameTextBox.Focus();
+                errorProvider.SetError(textBox, "Por favor introduzca un valor numérico");
             }
             else
             {
@@ -56,7 +62,7 @@ namespace RestaurantAppCUD
             }
         }
 
-        private string validationTexts(string textBoxRef)
+        private string validationTextForRequired(string textBoxRef)
         {
             switch (textBoxRef)
             {
