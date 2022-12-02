@@ -53,7 +53,7 @@ namespace RestaurantAppCUD
             {
                 e.Cancel = true;
                 textBox.Focus();
-                errorProvider.SetError(textBox, "Por favor introduzca un valor numérico");
+                errorProvider.SetError(textBox, "Por favor introduzca un valor numérico válido");
             }
             else
             {

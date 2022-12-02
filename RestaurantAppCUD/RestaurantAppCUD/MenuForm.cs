@@ -51,7 +51,6 @@ namespace RestaurantAppCUD
             totalInMenuForm = MenuFormService.calculateCost(valuesSelected);
 
             label3.Text = totalInMenuForm.ToString();
-            button2.Enabled = true;
         }
 
         private void registerOrder(object sender, EventArgs e)
@@ -103,10 +102,12 @@ namespace RestaurantAppCUD
                     e.Cancel = true;
                     checkedListBox.Focus();
                     errorProvider.SetError(checkedListBox, "Selecciona un plato");
+                    button2.Enabled = false;
                 } else
                 {
                     e.Cancel = false;
                     errorProvider.SetError(checkedListBox, null);
+                    button2.Enabled = true;
                 }
             } else if (fieldBox.GetType().BaseType.Name == "ListControl")
             {
