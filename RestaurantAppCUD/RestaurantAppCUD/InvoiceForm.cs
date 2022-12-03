@@ -1,4 +1,5 @@
 ﻿using AppLogicCUD.Services;
+using System.Diagnostics;
 
 namespace RestaurantAppCUD
 {
@@ -11,6 +12,9 @@ namespace RestaurantAppCUD
 
         private void payOrder(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             InvoiceFormService.registerClientOrderDishes(MenuForm.setValueForDataGrid.Rows);
 
             string totalPayed = MenuForm.totalInMenuForm.ToString();
@@ -18,6 +22,9 @@ namespace RestaurantAppCUD
             InvoiceFormService.generateInvoicePdf(MenuForm.setValueForDataGrid, totalPayed);
 
             this.Close();
+
+            stopwatch.Stop();
+            Debug.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
         }
 
         private void loadInvoice(object sender, EventArgs e)

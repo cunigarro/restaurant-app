@@ -1,6 +1,6 @@
 using AppLogicCUD.Services;
 using AppLogicCUD.Models;
-using System.Linq.Expressions;
+using System.Diagnostics;
 
 namespace RestaurantAppCUD
 {
@@ -15,6 +15,8 @@ namespace RestaurantAppCUD
 
         private void registerClient(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             try
             {
                 Client objClient = new Client();
@@ -37,6 +39,8 @@ namespace RestaurantAppCUD
             {
                 notification.Text = "Error: " + ex.Message;
             }
+            stopwatch.Stop();
+            // Debug.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
         }
 
         private void validateTextBox(object sender, System.ComponentModel.CancelEventArgs e)

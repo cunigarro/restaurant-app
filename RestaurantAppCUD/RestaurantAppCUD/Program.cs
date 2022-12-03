@@ -1,3 +1,5 @@
+
+
 namespace RestaurantAppCUD
 {
     internal static class Program
@@ -12,6 +14,8 @@ namespace RestaurantAppCUD
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new ClientForm());
+
+
         }
     }
 }

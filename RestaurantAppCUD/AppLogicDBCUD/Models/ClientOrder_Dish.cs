@@ -1,7 +1,5 @@
 ﻿using AppLogicCUD.Services;
 using System.Data;
-using System.Net;
-using System.Xml.Linq;
 
 namespace AppLogicCUD.Models
 {

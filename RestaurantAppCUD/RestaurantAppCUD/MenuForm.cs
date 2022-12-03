@@ -1,8 +1,7 @@
-﻿using AppLogicCUD.Services;
-using AppLogicCUD.Models;
+﻿using AppLogicCUD.Models;
+using AppLogicCUD.Services;
 using System.Data;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics;
 
 namespace RestaurantAppCUD
 {
@@ -40,6 +39,8 @@ namespace RestaurantAppCUD
 
         private void calculateCost(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             List<Int32> valuesSelected = new List<Int32>();
 
             foreach (object itemChecked in dishesCheckedListBox.CheckedItems)
@@ -51,10 +52,15 @@ namespace RestaurantAppCUD
             totalInMenuForm = MenuFormService.calculateCost(valuesSelected);
 
             label3.Text = totalInMenuForm.ToString();
+            stopwatch.Stop();
+            // Debug.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
         }
 
         private void registerOrder(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             ClientOrder objClientOrder = new ClientOrder();
 
             objClientOrder.IdClient = Int32.Parse(ClientFormService.getLastClientId());
@@ -79,11 +85,14 @@ namespace RestaurantAppCUD
 
             this.Hide();
             invoiceFormInstance.Show();
+
+            stopwatch.Stop();
+            // Debug.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
         }
 
         private void selectedMenu(object sender, EventArgs e)
         {
-            if(menuComboBox.SelectedValue.ToString() != "System.Data.DataRowView")
+            if (menuComboBox.SelectedValue.ToString() != "System.Data.DataRowView")
             {
                 string value = menuComboBox.SelectedValue.ToString();
                 setNamePriceInCheckedList(Int32.Parse(value));
@@ -94,22 +103,25 @@ namespace RestaurantAppCUD
         {
             var fieldBox = sender;
 
-            if(fieldBox.GetType().BaseType.Name == "ListBox")
+            if (fieldBox.GetType().BaseType.Name == "ListBox")
             {
                 CheckedListBox checkedListBox = fieldBox as CheckedListBox;
 
-                if (checkedListBox.Name == "dishesCheckedListBox" & checkedListBox.CheckedItems.Count <= 0) {
+                if (checkedListBox.Name == "dishesCheckedListBox" & checkedListBox.CheckedItems.Count <= 0)
+                {
                     e.Cancel = true;
                     checkedListBox.Focus();
                     errorProvider.SetError(checkedListBox, "Selecciona un plato");
                     button2.Enabled = false;
-                } else
+                }
+                else
                 {
                     e.Cancel = false;
                     errorProvider.SetError(checkedListBox, null);
                     button2.Enabled = true;
                 }
-            } else if (fieldBox.GetType().BaseType.Name == "ListControl")
+            }
+            else if (fieldBox.GetType().BaseType.Name == "ListControl")
             {
                 System.Windows.Forms.ComboBox comboBox = fieldBox as System.Windows.Forms.ComboBox;
 
