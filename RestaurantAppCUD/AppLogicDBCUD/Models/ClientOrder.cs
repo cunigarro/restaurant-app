@@ -7,7 +7,7 @@ namespace AppLogicCUD.Models
     {
         private int idClient;
 
-        private string date;
+        private string date = "";
         
         private int total;
         public int IdClient { get { return idClient; } set { idClient = value; } }

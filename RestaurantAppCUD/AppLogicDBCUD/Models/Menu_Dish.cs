@@ -5,9 +5,9 @@ namespace AppLogicCUD.Models
 {
     public class Menu_Dish
     {
-        private string idMenu;
+        private string idMenu = "";
 
-        private string idDish;
+        private string idDish = "";
         public string IdMenu { get { return idMenu; } set { idMenu = value; } }
         public string IdDish { get { return idDish; } set { idDish = value; } }
 

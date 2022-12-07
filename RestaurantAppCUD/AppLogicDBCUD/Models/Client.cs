@@ -5,17 +5,17 @@ namespace AppLogicCUD.Models
 {
     public class Client
     {
-        private string name;
+        private string name = "";
 
-        private string lastName;
+        private string lastName = "";
         
         private int age;
         
         private int dni;
         
-        private string address;
+        private string address = "";
         
-        private string email;
+        private string email = "";
         public string Name { get { return name; } set { name = value; } }
         public string LastName { get { return lastName; } set { lastName = value; } }   
         public int Age { get { return age; } set { age = value; } }
