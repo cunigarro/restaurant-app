@@ -28,7 +28,7 @@ namespace RestaurantAppTests
         [Test]
         public void RegisterClientOrderDishes()
         {
-            Dish dish = new Dish();
+            ClientOrder_Dish dish = new ClientOrder_Dish();
             DataTable lastDish = dish.findFirstByOrderByIdDesc();
 
             DataRowCollection dishes = lastDish.Rows;
