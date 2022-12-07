@@ -44,7 +44,7 @@ namespace AppLogicCUD.Services
             itemsPayed.Rows.Add(new object[] { "Total", "", "", totalPayed });
             pdfGrid.DataSource = itemsPayed;
             pdfGrid.Draw(page, new PointF(10, 10));
-            var fileStream = File.Create("C:\\Users\\chris\\Documents\\Factura.pdf");
+            var fileStream = File.Create("..\\..\\..\\..\\Factura.pdf");
             doc.Save(fileStream);
             doc.Close(true);
         }

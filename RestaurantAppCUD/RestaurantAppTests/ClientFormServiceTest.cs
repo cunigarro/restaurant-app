@@ -11,7 +11,7 @@ namespace RestaurantAppTests
         {
             Client client = new Client();
 
-            int amountOfItems = client.findAll().Rows.Count;
+            int expectedAmountOfItems = client.findAll().Rows.Count + 1;
 
             client.Name = "Andrés Arturo";
             client.LastName = "Gonzales Llanos";
@@ -22,10 +22,11 @@ namespace RestaurantAppTests
 
             ClientFormService.saveClientData(client);
 
-            int amountAfterInsert = client.findAll().Rows.Count;
+            int actualAmountOfItem = client.findAll().Rows.Count;
 
-            Assert.That(amountOfItems + 1, Is.EqualTo(amountAfterInsert));
+            Assert.That(expectedAmountOfItems, Is.EqualTo(actualAmountOfItem));
 
+            // Removing register used for test
             string lastClientId = "";
 
             foreach (DataRow row in client.findFirstByOrderByIdDesc().Rows)

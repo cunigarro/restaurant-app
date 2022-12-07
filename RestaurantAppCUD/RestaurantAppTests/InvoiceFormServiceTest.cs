@@ -54,10 +54,28 @@ namespace RestaurantAppTests
             Assert.That(expectedDishId, Is.EqualTo(dishId));
         }
 
-        /* [Test]
+        [Test]
         public void GenerateInvoicePdf()
         {
+            DataTable dataExample = new DataTable();
 
-        } */
+            dataExample.Columns.Add("ID_Dish", typeof(string));
+            dataExample.Columns.Add("Name", typeof(string));
+            dataExample.Columns.Add("Description", typeof(string));
+            dataExample.Columns.Add("Price", typeof(string));
+
+            dataExample.Rows.Add(new object[] { 
+                1, 
+                "Ejemplo plato",
+                "Ejemplo descripción plato.", 
+                "100000"
+            });
+
+            InvoiceFormService.generateInvoicePdf(dataExample, "100000");
+
+            bool fileExistCheck = File.Exists("..\\..\\..\\..\\Factura.pdf");
+
+            Assert.IsTrue(fileExistCheck);
+        }
     }
 }

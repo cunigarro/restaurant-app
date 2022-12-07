@@ -399,3 +399,9 @@ FodyWeavers.xsd
 
 /obj
 /bin
+
+# Sonarqube
+.sonarqube/*
+
+# Factura
+Factura.pdf

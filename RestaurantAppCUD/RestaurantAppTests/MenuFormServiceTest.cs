@@ -103,11 +103,5 @@ namespace RestaurantAppTests
 
             Assert.That(expectedAllMenus.Rows.Count, Is.EqualTo(allMenus.Rows.Count));
         }
-
-        /* [Test]
-        public void GetDishesWithPrice()
-        {
-
-        } */
     }
 }
